@@ -1,0 +1,22 @@
+2019-06-23T15:02:51+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_External as array in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php:29
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\class-wp-hook.php(286): remove_text_add_to_cart('')
+#1 C:\xampp\htdocs\vaibekum\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\vaibekum\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\content-product.php(83): do_action('add_button_chat')
+#4 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#6 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(63): wc_get_template_part('content', 'product')
+#7 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs. in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 29
+
+2019-06-23T15:03:01+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Product_External as array in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php:29
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\class-wp-hook.php(286): remove_text_add_to_cart('')
+#1 C:\xampp\htdocs\vaibekum\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\vaibekum\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\content-product.php(83): do_action('add_button_chat')
+#4 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#6 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(63): wc_get_template_part('content', 'product')
+#7 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs. in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 29
+

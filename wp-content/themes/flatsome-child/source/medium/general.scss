@@ -1,0 +1,129 @@
+$main_color: #f30000;
+body {
+    font-family: futuraregular, Helvetica, Arial, sans-serif !important;
+}
+
+.f-w-400 {
+    font-weight: 400!important;
+}
+
+// @font-face {
+//     font-family: 'SFUFuturaLight';
+//     src: url("futuralight.ttf")
+// }
+// @font-face {
+//     font-family: 'SFUFuturaBook';
+//     src: url("futurabook.ttf")
+// }
+// @font-face {
+//     font-family: 'SFUFuturaHeavy';
+//     src: url("futuraheavy.ttf")
+// }
+// @font-face {
+//     font-family: 'SFUFuturaExtraBold';
+//     src: url("futuraextrabold.ttf")
+// }
+//css text for nav top menu
+ul.nav.header-nav {
+    >li>a {
+        font-family: 'SFUFuturaBold';
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+// button chat content product
+.chat_btn {
+    margin-top: 15px;
+    a {
+        color: #fff;
+        border-radius: 10px;
+        font-size: 12px;
+        text-transform: unset;
+        margin-top: 0!important;
+        margin-bottom: 0;
+    }
+}
+
+// text page 404
+.error-404 {
+    .page-title {
+        color: #333;
+    }
+    .land {
+        color: #888;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font {
+    font-family: futuraregular, Helvetica, Arial, sans-serif!important;
+    font-weight: 500!important;
+}
+
+.text-white {
+    color: white;
+}
+
+// box text content prosuct
+.box-text {
+    font-size: 14px!important;
+}
+
+.price-wrapper {
+    .price span {
+        font-size: 14px;
+        color: #f30000;
+        font-weight: bold;
+        font-family: SFUFUturaBook;
+    }
+}
+
+// box add to cart hover
+.col-inner {
+    &:hover {
+        .box-hover {
+            opacity: 1;
+        }
+    }
+    .box-hover {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        justify-content: center;
+        display: flex;
+        transition: all 0.4s ease-in-out;
+        .wrap_add_cart {
+            transition: all 0.2s ease-in-out;
+            background-color: hsl(0, 0%, 95%);
+            a {
+                color: #bec2c7;
+            }
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            a:hover {
+                color: unset;
+            }
+            &:hover {
+                a {
+                    color: white;
+                }
+                background-color: $main_color;
+                color: white;
+            }
+        }
+    }
+}
+
+@import "./footer";
