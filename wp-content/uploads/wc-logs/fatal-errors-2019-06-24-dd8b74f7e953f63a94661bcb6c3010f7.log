@@ -18,3 +18,66 @@ Stack trace:
 #5 {main}
   thrown in C:\xampp\htdocs\vaibekum\wp-includes\plugin.php on line 405
 
+2019-06-24T10:27:23+00:00 CRITICAL Uncaught Error: Call to undefined function get_ID() in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php:34
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require()
+#1 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#2 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#3 C:\xampp\htdocs\vaibekum\wp-includes\template-loader.php(78): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\vaibekum\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\index.php(17): require('C:\\xampp\\htdocs...')
+#6 {main}
+  thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 34
+
+2019-06-24T10:30:42+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_cat_name(), 0 passed in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 34 and exactly 1 expected in C:\xampp\htdocs\vaibekum\wp-includes\category.php:216
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(34): get_cat_name()
+#1 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#3 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#4 C:\xampp\htdocs\vaibekum\wp-includes\template-loader.php(78): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\vaibekum\index.php(17): require('C in C:\xampp\htdocs\vaibekum\wp-includes\category.php on line 216
+
+2019-06-24T10:31:05+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_cat_name(), 0 passed in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 34 and exactly 1 expected in C:\xampp\htdocs\vaibekum\wp-includes\category.php:216
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php(34): get_cat_name()
+#1 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#3 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#4 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\templates\taxonomy-product_cat.php(22): wc_get_templ in C:\xampp\htdocs\vaibekum\wp-includes\category.php on line 216
+
+2019-06-24T10:43:46+00:00 CRITICAL Uncaught Error: Call to undefined function post_type_archive() in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php:35
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require()
+#1 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#2 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#3 C:\xampp\htdocs\vaibekum\wp-includes\template-loader.php(78): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\vaibekum\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\index.php(17): require('C:\\xampp\\htdocs...')
+#6 {main}
+  thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 35
+
+2019-06-24T10:46:14+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_type_archive_title() in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php:35
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require()
+#1 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#2 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#3 C:\xampp\htdocs\vaibekum\wp-includes\template-loader.php(78): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\vaibekum\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\index.php(17): require('C:\\xampp\\htdocs...')
+#6 {main}
+  thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 35
+
+2019-06-24T10:47:18+00:00 CRITICAL Uncaught Error: Call to undefined function replace() in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php:35
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-includes\template.php(724): require()
+#1 C:\xampp\htdocs\vaibekum\wp-content\plugins\woocommerce\includes\wc-core-functions.php(195): load_template('C:\\xampp\\htdocs...', false)
+#2 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\archive-product.php(27): wc_get_template_part('layouts/categor...', 'left-sidebar')
+#3 C:\xampp\htdocs\vaibekum\wp-includes\template-loader.php(78): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\vaibekum\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\vaibekum\index.php(17): require('C:\\xampp\\htdocs...')
+#6 {main}
+  thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 35
+

@@ -217,6 +217,12 @@ span.widget-title.shop-sidebar {
   padding: 0 15px;
 }
 
+h1.title-head {
+  font-size: 21px;
+  color: #333;
+  font-family: SFUFuturaBold;
+}
+
 .footer-widgets.footer.footer-2 {
   color: #7a7a7a;
 }

@@ -31,7 +31,12 @@
 		 * @hooked woocommerce_taxonomy_archive_description - 10
 		 * @hooked woocommerce_product_archive_description - 10
 		 */
-		the_title();
+		if(is_post_type_archive('product')){
+			echo '<h1 class="title-head margin-top-0">Tất cả sản phẩm</h1>';
+		}else{
+			echo '<h1 class="title-head margin-top-0">'.str_replace('Category:', '', get_the_archive_title( )).'</h1>';
+		}
+		
 		do_action( 'woocommerce_archive_description' );
 		?>
 
