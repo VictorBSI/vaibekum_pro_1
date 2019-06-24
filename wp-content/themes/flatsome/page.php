@@ -16,6 +16,7 @@ if(flatsome_option('pages_layout') != 'default') {
 
 get_header();
 do_action( 'flatsome_before_page' ); ?>
+
 <div id="content" class="content-area page-wrapper" role="main">
 	<div class="row row-main">
 		<div class="large-12 col">

@@ -220,4 +220,20 @@ span.widget-title.shop-sidebar {
     max-width: inherit !important;
 }
 
+// breakcrumb
+#breadcrumbs {
+    margin-bottom: 0;
+    padding: 10px 0;
+    span {
+        font-size: 14px;
+    }
+    .breadcrumb_last {
+        color: $main_color;
+    }
+}
+
+.p-15 {
+    padding: 0 15px;
+}
+
 @import "./footer";

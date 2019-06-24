@@ -8,3 +8,13 @@
 
 2019-06-24T08:54:10+00:00 CRITICAL syntax error, unexpected '<' in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\inc\widget.php on line 58
 
+2019-06-24T09:47:30+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function add_action(), 0 passed in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 86 and at least 2 expected in C:\xampp\htdocs\vaibekum\wp-includes\plugin.php:405
+Stack trace:
+#0 C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php(86): add_action()
+#1 C:\xampp\htdocs\vaibekum\wp-settings.php(499): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\vaibekum\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\vaibekum\wp-load.php(37): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\vaibekum\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\vaibekum\wp-includes\plugin.php on line 405
+

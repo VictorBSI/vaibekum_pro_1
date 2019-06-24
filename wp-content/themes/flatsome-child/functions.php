@@ -77,3 +77,15 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
+function add_breakcrumb(){
+    if(!is_front_page()){
+        echo '<div class="row row-main">';
+        echo '<div class="p-15">';
+         if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+            } 
+        echo '</div></div>';
+    }
+}
+add_action('pc_after_header', 'add_breakcrumb');
