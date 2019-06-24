@@ -1,6 +1,6 @@
 <?php
 // Add custom Theme Functions here
-
+require 'inc/widget.php';
 function setup_script_theme()
 {
     wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
@@ -53,13 +53,27 @@ function remove_rating_single_product(){
 add_action('init', 'remove_rating_single_product');
 
 function gift_product(){
-    $content_gift = get_field('content');
-    if(!empty($content_gift)){
-        echo sprintf('<div class="promotional-gift"> 
-                <h4>Quà khuyến mãi</h4>
-                </div>
-                <div class="note-promo">
-                <i class="fa fa-angle-up custommer-fa-angle-promo"></i>%s</div>', $content_gift);
+    $content_gift = 'content';
+    if(have_rows($content_gift)){
+        echo '<div class="note-promo">';
+        while(have_rows($content_gift)): the_row();
+            echo sprintf('<a href="%s" target="%s">%s </a>', 
+                get_sub_field('link')['url'],
+                get_sub_field('link')['target'],
+                get_sub_field('link')['title']
+            );
+        endwhile;
+        echo '</div>';
     }
+        
 }
 add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
+
+//add key google map api
+
+function my_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyBKkB3dUc3wHktb8V27KI9e5DM1x_6f_fw');
+}
+
+add_action('acf/init', 'my_acf_init');
