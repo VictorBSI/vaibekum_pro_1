@@ -81,3 +81,13 @@ Stack trace:
 #6 {main}
   thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 35
 
+2019-06-24T15:47:41+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 35
+
+2019-06-24T15:48:15+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 35
+
+2019-06-24T15:48:58+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 35
+
+2019-06-24T15:54:20+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 35
+
+2019-06-24T16:39:38+00:00 CRITICAL require(): Failed opening required 'C:\xampp\htdocs\vaibekum/wp-content/themes/flatsome/inc/cusFunctionsShortCode.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\functions.php on line 4
+

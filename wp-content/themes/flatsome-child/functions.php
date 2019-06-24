@@ -1,12 +1,19 @@
 <?php
 // Add custom Theme Functions here
 require 'inc/widget.php';
+require 'inc/cusFunctionsShortCode.php';
+
 function setup_script_theme()
 {
     wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style('awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css', array(), NULL);
 }
 add_action('wp_enqueue_scripts', 'setup_script_theme');
+
+function vaibekum_load_theme_scripts() {
+	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
+}
+add_action( 'wp_enqueue_scripts', 'vaibekum_load_theme_scripts', 30 );
 
 function remove_price_product()
 {
@@ -20,22 +27,22 @@ function pc_add_button_chat(){
 
 add_action('add_button_chat', 'pc_add_button_chat',11,1);
 
-function remove_text_add_to_cart(){
-    global $product;
-    echo apply_filters( 'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
-        sprintf( '<div class="box-hover hidden-sm hidden-xs hidden-md">
-                    <div class="wrap_add_cart"> 
-                    <a href="%s" data-product_id="%s" class="%s" %s><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>',
-            esc_url( $product->add_to_cart_url() ),
-            esc_attr($product->id) ,
-            esc_attr('ajax_add_to_cart add_to_cart_button product_type_simple primary btn_add_cart' ),
-            isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-        ),
-    $product, $args );
-}
-add_action('add_button_chat', 'remove_text_add_to_cart', 12);
+// function remove_text_add_to_cart(){
+//     global $product;
+//     echo apply_filters( 'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+//         sprintf( '<div class="box-hover hidden-sm hidden-xs hidden-md">
+//                     <div class="wrap_add_cart">
+//                     <a href="%s" data-product_id="%s" class="%s" %s><i class="fas fa-shopping-cart"></i></a>
+//                     </div>
+//                 </div>',
+//             esc_url( $product->add_to_cart_url() ),
+//             esc_attr($product->id) ,
+//             esc_attr('ajax_add_to_cart add_to_cart_button product_type_simple primary btn_add_cart' ),
+//             isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+//         ),
+//     $product, $args );
+// }
+// add_action('add_button_chat', 'remove_text_add_to_cart', 12);
 
 function edit_format_current_dong($price,$product){
     if(is_single()){
@@ -57,7 +64,7 @@ function gift_product(){
     if(have_rows($content_gift)){
         echo '<div class="note-promo">';
         while(have_rows($content_gift)): the_row();
-            echo sprintf('<a href="%s" target="%s">%s </a>', 
+            echo sprintf('<a href="%s" target="%s">%s </a>',
                 get_sub_field('link')['url'],
                 get_sub_field('link')['target'],
                 get_sub_field('link')['title']
@@ -65,14 +72,14 @@ function gift_product(){
         endwhile;
         echo '</div>';
     }
-        
+
 }
 add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
 
 //add key google map api
 
 function my_acf_init() {
-	
+
 	acf_update_setting('google_api_key', 'AIzaSyDbM42OCaVrY9-PIgX_rzu8T6yG1WIqlhM');
 }
 
@@ -84,8 +91,19 @@ function add_breakcrumb(){
         echo '<div class="p-15">';
          if ( function_exists('yoast_breadcrumb') ) {
                 yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-            } 
+            }
         echo '</div></div>';
     }
 }
 add_action('pc_after_header', 'add_breakcrumb');
+
+/* THEME OPTIONS */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Thiết lập giao diện',
+		'menu_title'	=> 'Thiết lập giao diện',
+		'menu_slug' 	=> 'theme-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'	=> false
+	));
+}
