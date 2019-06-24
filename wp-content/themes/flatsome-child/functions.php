@@ -46,3 +46,20 @@ function edit_format_current_dong($price,$product){
     return $price;
 }
 add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
+
+function remove_rating_single_product(){
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+}
+add_action('init', 'remove_rating_single_product');
+
+function gift_product(){
+    $content_gift = get_field('content');
+    if(!empty($content_gift)){
+        echo sprintf('<div class="promotional-gift"> 
+                <h4>Quà khuyến mãi</h4>
+                </div>
+                <div class="note-promo">
+                <i class="fa fa-angle-up custommer-fa-angle-promo"></i>%s</div>', $content_gift);
+    }
+}
+add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
