@@ -40,8 +40,8 @@ h4,
 h5,
 h6,
 .heading-font {
-  font-family: futuraregular, Helvetica, Arial, sans-serif !important;
-  font-weight: 500 !important;
+  font-family: futuraregular, Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 
 .text-white {
@@ -52,20 +52,35 @@ h6,
   font-size: 14px !important;
 }
 
-.price-wrapper .price span {
+.price-wrapper .price span.product-price-single {
+  font-size: 24px;
+  color: #f30000;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.price-wrapper .price span.product-price-catogory {
   font-size: 14px;
   color: #f30000;
-  font-weight: bold;
   font-family: SFUFUturaBook;
+  font-weight: bold;
 }
 
 .col-inner:hover .box-hover {
   opacity: 1;
 }
 
+.col-inner:hover .price-wrapper {
+  opacity: 0;
+}
+
+.col-inner .price-wrapper {
+  transition: all 0.4s ease-in-out;
+}
+
 .col-inner .box-hover {
   position: absolute;
-  top: 40px;
+  top: 53px;
   right: 0;
   left: 0;
   opacity: 0;
@@ -105,6 +120,49 @@ h6,
 
 .col-inner .box-hover .wrap_add_cart:hover a {
   color: white;
+}
+
+.title-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-wrapper .name.product-title {
+  margin-bottom: 15px;
+}
+
+.title-wrapper .name.product-title a {
+  width: 100%;
+}
+
+#shop-sidebar > aside {
+  border: 1px solid #ebebeb;
+  padding: 10px;
+}
+
+#shop-sidebar > aside .is-divider {
+  display: none;
+}
+
+span.widget-title.shop-sidebar {
+  font-family: SFUFuturaBold;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.widget > ul > li + li {
+  border-top: none !important;
+}
+
+.product-info h1.title-single-product {
+  font-family: SFUFuturaBold;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
 }
 
 .footer-widgets.footer.footer-2 {

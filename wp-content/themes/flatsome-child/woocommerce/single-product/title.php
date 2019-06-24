@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<h1 class="product-title product_title entry-title">
+<h1 class="product-title product_title entry-title title-single-product">
 	<?php the_title(); ?>
 </h1>
 

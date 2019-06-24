@@ -36,3 +36,13 @@ function remove_text_add_to_cart(){
     $product, $args );
 }
 add_action('add_button_chat', 'remove_text_add_to_cart', 12);
+
+function edit_format_current_dong($price,$product){
+    if(is_single()){
+        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'₫</span>';
+    }else{
+        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'₫</span>';
+    }
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
