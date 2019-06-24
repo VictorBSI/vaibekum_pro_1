@@ -81,3 +81,7 @@ Stack trace:
 #6 {main}
   thrown in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\woocommerce\layouts\category.php on line 35
 
+2019-06-24T22:42:52+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome\inc\helpers\helpers-icons.php on line 3
+
+2019-06-24T22:44:11+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\vaibekum\wp-includes\Requests\Transport\cURL.php on line 441
+

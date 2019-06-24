@@ -73,7 +73,7 @@ add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
 
 function my_acf_init() {
 	
-	acf_update_setting('google_api_key', 'AIzaSyDbM42OCaVrY9-PIgX_rzu8T6yG1WIqlhM');
+	acf_update_setting('google_api_key', 'AIzaSyBhadVHNoXvEt-h6HGNOhgc8MPMVvrlHHc');
 }
 
 add_action('acf/init', 'my_acf_init');
@@ -89,3 +89,20 @@ function add_breakcrumb(){
     }
 }
 add_action('pc_after_header', 'add_breakcrumb');
+
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+    function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
+/**
+ * Rename product data tabs
+ */
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+function woo_rename_tabs( $tabs ) {
+
+	$tabs['description']['title'] = 'Mô tả';	// Rename the description tab
+	
+	return $tabs;
+
+}

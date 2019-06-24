@@ -248,4 +248,38 @@ h1.title-head-page {
     font-family: SFUFuturaBold;
 }
 
+.tab-panels {
+    p {
+        font-size: 14px;
+    }
+}
+
+// tab single product
+ul.tabs.wc-tabs.product-tabs.small-nav-collapse.nav.nav-uppercase.nav-line.nav-left {
+    >li {
+        &:hover {
+            background-color: $main_color;
+        }
+        &.active {
+            background-color: $main_color;
+        }
+        background-color: #404042;
+        padding: 0 20px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        a {
+            &:before {
+                opacity: 0;
+            }
+            color: white;
+            font-size: 13px;
+        }
+    }
+}
+
+.title-wrapper {
+    height: 39px;
+    margin-bottom: 15px;
+}
+
 @import "./footer";
