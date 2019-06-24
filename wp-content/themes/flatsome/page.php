@@ -24,7 +24,7 @@ do_action( 'flatsome_before_page' ); ?>
 				
 				<?php if(get_theme_mod('default_title', 0)){ ?>
 				<header class="entry-header">
-					<h1 class="entry-title mb uppercase"><?php the_title(); ?></h1>
+					<h1 class="entry-title mb uppercase title-head-page"><a href='<?php the_permalink() ?>'><?php the_title(); ?></a></h1>
 				</header><!-- .entry-header -->
 				<?php } ?>
 

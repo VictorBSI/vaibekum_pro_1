@@ -73,7 +73,7 @@ add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
 
 function my_acf_init() {
 	
-	acf_update_setting('google_api_key', 'AIzaSyBKkB3dUc3wHktb8V27KI9e5DM1x_6f_fw');
+	acf_update_setting('google_api_key', 'AIzaSyDbM42OCaVrY9-PIgX_rzu8T6yG1WIqlhM');
 }
 
 add_action('acf/init', 'my_acf_init');
