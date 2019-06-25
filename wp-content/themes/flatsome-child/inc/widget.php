@@ -282,6 +282,7 @@ class Ho_tro_online_widget extends WP_Widget {
         $phone_wid = get_field('phone', 'widget_' . $widget_id);
         $phone_suppport = get_field('phone_support', 'widget_' . $widget_id);
         $time_work = get_field('time_work', 'widget_' . $widget_id);
+
         echo '<div class="support-content">';
             echo $before_widget;
 
@@ -289,16 +290,16 @@ class Ho_tro_online_widget extends WP_Widget {
             echo $before_title.$title.$after_title;
             echo '<div class="support_content">';
             // Nội dung trong widget
-            echo '<p class="sub-showroom"><i class="fas fa-map-marker-alt"></i>'.$address.'</p>';
+            echo '<p class="sub-showroom"><a target="_blank" href="https://maps.google.com/?ll='.$address['lat'].','.$address['lng'].'"><i class="fas fa-map-marker-alt"></i>'.$address['address'].'</a></p>';
             echo '<span class="color-support">Kinh Doanh:</span>';
            
             if(!empty( $phone_wid )){
                 foreach($phone_wid as $key => $value){
-                    echo '<i class="fas fa-phone-alt">'.$value['dien_thoai'].'</i>';
+                    echo '<i class="fas fa-phone phone">  '.$value['dien_thoai'].'</i>';
                 }
             }
             echo '<span class="color-support">Kỹ Thuật:</span>';
-            echo '<i class="fas fa-phone-alt">'.$phone_suppport.'</i>';
+            echo '<i class="fas fa-phone phone">  '.$phone_suppport.'</i>';
             echo '<span class="color-support-time-work">Thời gian làm việc : '. $time_work.'</span>';  
             // Kết thúc nội dung trong widget
             echo $after_widget;

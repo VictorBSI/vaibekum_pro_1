@@ -573,7 +573,16 @@ body.home #mega_menu {
     display: block
 }
 
+
+/* ho tro online single product */
+
 .support-content {
+    i.phone {
+        display: block;
+        padding: 5px;
+        font-size: 17px;
+        color: $main_color;
+    }
     span.widget-title.shop-sidebar {
         width: 100%;
         background: #d60c0c;
@@ -582,5 +591,28 @@ body.home #mega_menu {
         color: #fff;
         font-weight: 600;
         margin-bottom: 0px;
+    }
+    .is-divider {
+        display: none;
+    }
+    .support_content {
+        border: 1px dashed #d60c0c;
+        border-top: none;
+        padding: 10px;
+        >p i {
+            margin-right: 5px;
+        }
+    }
+    .sub-showroom {
+        margin-bottom: 0;
+    }
+    span.color-support {
+        color: #279DE5;
+        font-size: 18px;
+        display: block;
+    }
+    .color-support-time-work {
+        color: #5a5a5a;
+        font-size: 15px;
     }
 }
