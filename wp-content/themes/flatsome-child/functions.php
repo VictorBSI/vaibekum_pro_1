@@ -46,9 +46,9 @@ add_action('add_button_chat', 'pc_add_button_chat',11,1);
 
 function edit_format_current_dong($price,$product){
     if(is_single()){
-        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'₫</span>';
+        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
     }else{
-        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'₫</span>';
+        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
     }
     return $price;
 }
