@@ -1,4 +1,5 @@
 $main_color: #f30000;
+@import "./footer";
 body {
     font-family: futuraregular, Helvetica, Arial, sans-serif !important;
 }
@@ -298,4 +299,128 @@ span.ui-slider-handle {
     background-color: $main_color!important;
 }
 
-@import "./footer";
+
+/* AN CAO */
+
+
+/* HỖ TRỢ ONLINE */
+
+.header-block {
+    width: auto !important;
+}
+
+.hide-for-medium .header-nav-main .header-block:first-child {
+    left: 10px !important;
+}
+
+.vbk-support {
+    font-size: 12px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: text-bottom;
+    position: relative;
+}
+
+.vbk-support .support {
+    min-width: 190px;
+    padding: 0px 10px;
+    background: #f3d078;
+    border: 1px solid #444 !important;
+    font-size: 14px;
+    text-align: center;
+    color: #444;
+    line-height: 32px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+
+.vbk-support i {
+    font-size: 20px;
+    float: left;
+    color: #464646;
+    margin: 5px 0;
+}
+
+.support .help {
+    left: 0px;
+    top: -3px;
+}
+
+.vbk-support #contact-infomation-store-load {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    background: #fff;
+    z-index: 9999;
+    width: 390px;
+    position: absolute;
+    top: 40px;
+    margin: 0 auto;
+    box-shadow: 0px 5px 5px #ccc;
+    text-align: left;
+    line-height: 18px;
+}
+
+.vbk-support #contact-infomation-store-load i.icon-bottom {
+    border: none;
+    height: 10px;
+    margin-top: -24px;
+    margin-left: 60px;
+    position: absolute;
+    color: #ccc;
+}
+
+.vbk-support #contact-infomation-store-load .hotline {
+    font-size: 15px;
+    padding: 5px 0;
+    color: #d90000;
+    font-weight: bold;
+}
+
+.vbk-support #contact-infomation-store-load strong {
+    font-size: 14px;
+}
+
+.vbk-support strong {
+    color: #FF9600;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.vbk-support #contact-infomation-store-load .add-item {
+    line-height: 20px;
+}
+
+.vbk-support #contact-infomation-store-load .list {
+    margin-top: 8px;
+}
+
+.vbk-support #contact-infomation-store-load h4 {
+    padding: 5px 0;
+    margin: 5px 0;
+    color: #00abd3;
+    font-size: 15px;
+    /* border-bottom: 1px solid #f1f1f1; */
+}
+
+.vbk-support #contact-infomation-store-load .add-item p {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.vbk-support #contact-infomation-store-load .add-item i {
+    border: none;
+    font-size: 14px;
+}
+
+.vbk-support .open-show-support-online {
+    display: block !important;
+}
