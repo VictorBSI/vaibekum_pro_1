@@ -106,3 +106,17 @@ function woo_rename_tabs( $tabs ) {
 	return $tabs;
 
 }
+
+// define the woocommerce_output_related_products_args callback 
+function filter_woocommerce_output_related_products_args( $args ) { 
+    // make filter magic happen here... 
+    $args = array( 
+        'posts_per_page' => 5,  
+        'columns' => 8,  
+        'orderby' => 'rand' 
+   ); 
+    return $args; 
+}; 
+         
+// add the filter 
+add_filter( 'woocommerce_output_related_products_args', 'filter_woocommerce_output_related_products_args', 10, 1 ); 

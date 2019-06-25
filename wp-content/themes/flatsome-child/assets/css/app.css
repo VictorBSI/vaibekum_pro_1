@@ -262,6 +262,20 @@ ul.tabs.wc-tabs.product-tabs.small-nav-collapse.nav.nav-uppercase.nav-line.nav-l
   margin-bottom: 15px;
 }
 
+.ui-slider-range.ui-widget-header.ui-corner-all,
+span.ui-slider-handle {
+  background-color: #f30000 !important;
+}
+
+.price_slider_amount .price_label {
+  color: #f30000;
+}
+
+.price_slider_amount > button {
+  color: white;
+  background-color: #f30000 !important;
+}
+
 .footer-widgets.footer.footer-2 {
   color: #7a7a7a;
 }
