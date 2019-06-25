@@ -1,10 +1,10 @@
 <?php if(flatsome_has_bottom_bar()['large_or_mobile']) {
 ?>
 <div id="wide-nav" class="header-bottom wide-nav <?php header_inner_class('bottom'); ?>">
-    <div class="flex-row container-test">
+    <div class="flex-row container">
 
             <?php if(get_theme_mod('header_elements_bottom_left') || get_theme_mod('header_elements_bottom_right')){ ?>
-            <div class="flex-col-3 hide-for-medium flex-left">
+            <div class="flex-col hide-for-medium flex-left">
                 <ul class="nav header-nav header-bottom-nav nav-left <?php flatsome_nav_classes('bottom'); ?>">
                     <?php flatsome_header_elements('header_elements_bottom_left','nav_position_text'); ?>
                 </ul>
@@ -20,7 +20,7 @@
             <?php } ?>
 
             <?php if(get_theme_mod('header_elements_bottom_right') || get_theme_mod('header_elements_bottom_left')){ ?>
-            <div class="flex-col-9 hide-for-medium flex-right flex-grow">
+            <div class="flex-col hide-for-medium flex-right flex-grow">
               <ul class="nav header-nav header-bottom-nav nav-right <?php flatsome_nav_classes('bottom'); ?>">
                    <?php flatsome_header_elements('header_elements_bottom_right','nav_position_text'); ?>
               </ul>

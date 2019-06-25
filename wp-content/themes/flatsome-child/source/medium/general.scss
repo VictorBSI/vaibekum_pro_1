@@ -498,10 +498,6 @@ body.home #mega_menu {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
 }
 
-#mega_menu ul.sub-menu>li>a {
-    /*width: 50%*/
-}
-
 #mega_menu ul.sub-menu>li:hover>a {
     background: #f5f5f5
 }
@@ -575,4 +571,16 @@ body.home #mega_menu {
 
 #mega_menu ul.sub-menu>li:hover>.menu-image {
     display: block
+}
+
+.support-content {
+    span.widget-title.shop-sidebar {
+        width: 100%;
+        background: #d60c0c;
+        font-size: 14px;
+        padding: 10px 0px;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
 }
