@@ -106,18 +106,6 @@ $(document).ready(function ($) {
     }
   });
 });
-jQuery(document).ready(function () {
-  jQuery("#mega-menu-title").click(function () {
-    jQuery("#mega_menu").toggleClass("active");
-  }), jQuery("body").click(function (e) {
-    var i = jQuery(e.target);
-    "mega-menu-title" != i.attr("id") && jQuery("#mega_menu.active").removeClass("active");
-  }), jQuery("#mega_menu>li").each(function (e) {
-    jQuery(this).children(".sub-menu").css("margin-top", 37 * -e + "px"), jQuery(this).children(".menu-image").css("margin-top", 37 * -e + "px"), jQuery(this).find("li").each(function (e) {
-      jQuery(this).children(".menu-image").css("margin-top", 36 * -e + "px");
-    });
-  });
-});
 
 /***/ }),
 
@@ -139,8 +127,8 @@ jQuery(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! c:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\js\main.js */"./js/main.js");
-module.exports = __webpack_require__(/*! c:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\source\app.scss */"./source/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\js\main.js */"./js/main.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\vaibekum\wp-content\themes\flatsome-child\source\app.scss */"./source/app.scss");
 
 
 /***/ })
