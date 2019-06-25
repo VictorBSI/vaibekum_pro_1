@@ -121,8 +121,7 @@ if(function_exists('acf_add_options_page')){
 		'redirect'	=> false,
     ));
 };
-<<<<<<< HEAD
-=======
+
 
 //custom display in stock
 function woocommerce_get_custom_availability( $data, $product ) {
@@ -141,4 +140,3 @@ function woocommerce_get_custom_availability( $data, $product ) {
     return $data;
 }
 add_action('woocommerce_get_availability', 'woocommerce_get_custom_availability', 10, 2);
->>>>>>> origin/master
