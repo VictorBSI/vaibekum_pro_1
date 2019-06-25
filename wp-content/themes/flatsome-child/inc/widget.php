@@ -55,7 +55,7 @@ class Google_map_widget extends WP_Widget {
             <div class="acf-map">
                 <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
             </div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCswObEMa2TC30pU9w_v2B6Xjh10M_JGyM"></script>   
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzB4oH-3da_7O2h67LyXCos6kjyqhGxvw"></script>   
             <script type="text/javascript">
                 (function($) {
 
