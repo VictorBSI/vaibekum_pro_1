@@ -3,6 +3,10 @@ add_action( 'widgets_init', 'create_map_widget' );
 function create_map_widget() {
         register_widget('Google_map_widget');
 }
+add_action( 'widgets_init', 'create_ho_tro_online' );
+function create_ho_tro_online() {
+        register_widget('Ho_tro_online_widget');
+}
 /**
  * Tạo class Thachpham_Widget
  */
@@ -55,7 +59,7 @@ class Google_map_widget extends WP_Widget {
             <div class="acf-map">
                 <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
             </div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCswObEMa2TC30pU9w_v2B6Xjh10M_JGyM"></script>   
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzB4oH-3da_7O2h67LyXCos6kjyqhGxvw"></script>   
             <script type="text/javascript">
                 (function($) {
 
@@ -231,6 +235,75 @@ class Google_map_widget extends WP_Widget {
             // Kết thúc nội dung trong widget
             echo $after_widget;
         }
+        
+        
+    }
+
+}
+
+class Ho_tro_online_widget extends WP_Widget {
+ 
+    /**
+     * Thiết lập widget: đặt tên, base ID
+     */
+    function __construct() {
+        parent::__construct (
+            'ho_tro_online_widget', // id của widget
+            'Hỗ trợ online widget', // tên của widget
+       
+            array(
+                'description' => 'Thêm thông tin hỗ trợ inline vào website' // mô tả
+            )
+        );
+    }
+
+    /**
+     * Tạo form option cho widget
+     */
+    function form( $instance ) {
+    }
+
+    /**
+     * save widget form
+     */
+
+    function update( $new_instance, $old_instance ) {
+
+    }
+
+    /**
+     * Show widget
+     */
+
+    function widget( $args, $instance ) {
+        extract($args);
+        $title = get_field('title', 'widget_' . $widget_id);
+        $address = get_field('address', 'widget_' . $widget_id);
+        $phone_wid = get_field('phone', 'widget_' . $widget_id);
+        $phone_suppport = get_field('phone_support', 'widget_' . $widget_id);
+        $time_work = get_field('time_work', 'widget_' . $widget_id);
+
+        echo '<div class="support-content">';
+            echo $before_widget;
+
+            //In tiêu đề widget
+            echo $before_title.$title.$after_title;
+            echo '<div class="support_content">';
+            // Nội dung trong widget
+            echo '<p class="sub-showroom"><a target="_blank" href="https://maps.google.com/?ll='.$address['lat'].','.$address['lng'].'"><i class="fas fa-map-marker-alt"></i>'.$address['address'].'</a></p>';
+            echo '<span class="color-support">Kinh Doanh:</span>';
+           
+            if(!empty( $phone_wid )){
+                foreach($phone_wid as $key => $value){
+                    echo '<i class="fas fa-phone phone">  '.$value['dien_thoai'].'</i>';
+                }
+            }
+            echo '<span class="color-support">Kỹ Thuật:</span>';
+            echo '<i class="fas fa-phone phone">  '.$phone_suppport.'</i>';
+            echo '<span class="color-support-time-work">Thời gian làm việc : '. $time_work.'</span>';  
+            // Kết thúc nội dung trong widget
+            echo $after_widget;
+        echo '</div>';
         
         
     }

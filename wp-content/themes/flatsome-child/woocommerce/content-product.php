@@ -82,6 +82,9 @@ if ( $out_of_stock ) $classes[] = 'out-of-stock';
 				echo '<div class="chat_btn">';
 				do_action( 'add_button_chat' );
 				echo '</div>';
+				echo '<div class="box-hover hidden-sm hidden-xs hidden-m">';
+				do_action( 'pc_add_to_cart' );
+				echo '</div>';
 				do_action( 'flatsome_product_box_after' );
 
 			?>

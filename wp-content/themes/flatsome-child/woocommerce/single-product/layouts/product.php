@@ -34,7 +34,7 @@
 		</div><!-- .summary -->
 
 
-		<div id="product-sidebar" class="col large-2 hide-for-medium product-sidebar-small">
+		<div id="product-sidebar" class="col large-3 hide-for-medium product-sidebar-small">
 			<?php
 				do_action('flatsome_before_product_sidebar');
 				/**

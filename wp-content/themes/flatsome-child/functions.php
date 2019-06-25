@@ -27,26 +27,11 @@ function pc_add_button_chat(){
 
 add_action('add_button_chat', 'pc_add_button_chat',11,1);
 
-// function remove_text_add_to_cart($args){
-//     global $product;
-//     echo apply_filters( 'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
-//         sprintf( '<div class="box-hover hidden-sm hidden-xs hidden-md">
-//                     <div class="wrap_add_cart">
-//                     <a href="%s" data-product_id="%s" class="%s" %s><i class="fas fa-shopping-cart"></i></a>
-//                     </div>
-//                 </div>',
-//             esc_url( $product->add_to_cart_url() ),
-//             esc_attr($product->id) ,
-//             esc_attr('ajax_add_to_cart add_to_cart_button product_type_simple primary btn_add_cart' ),
-//             isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',),$product, $args );
-// }
-// add_action('add_button_chat', 'remove_text_add_to_cart', 12);
-
 function edit_format_current_dong($price,$product){
     if(is_single()){
-        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'₫</span>';
+        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
     }else{
-        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'₫</span>';
+        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
     }
     return $price;
 }
@@ -78,7 +63,7 @@ add_action('woocommerce_single_product_summary', 'gift_product', 25,0);
 
 function my_acf_init() {
 
-    acf_update_setting('google_api_key', 'AIzaSyDbM42OCaVrY9-PIgX_rzu8T6yG1WIqlhM');
+    acf_update_setting('google_api_key', 'AIzaSyBzB4oH-3da_7O2h67LyXCos6kjyqhGxvw');
 }
 add_action('acf/init', 'my_acf_init');
 
@@ -136,3 +121,24 @@ if(function_exists('acf_add_options_page')){
 		'redirect'	=> false,
     ));
 };
+<<<<<<< HEAD
+=======
+
+//custom display in stock
+function woocommerce_get_custom_availability( $data, $product ) {
+    $html = '<span class="stock-brand-title"><strong><i class="fas fa-check-square"></i> Tình trạng: </strong></span>';
+    switch( $product->stock_status ) {
+        case 'instock':
+            $data = array( 'availability' => __( $html . 'Còn hàng', 'woocommerce' ), 'class' => 'in-stock' );
+        break;
+        case 'outofstock':
+            $data = array( 'availability' => __( $html. 'Hết hàng', 'woocommerce' ), 'class' => 'out-of-stock' );
+        break;
+        case 'onrequest':
+            $data = array( 'availability' => __( $html. 'Available to Order', 'woocommerce' ), 'class' => 'on-request' );
+        break;
+    }
+    return $data;
+}
+add_action('woocommerce_get_availability', 'woocommerce_get_custom_availability', 10, 2);
+>>>>>>> origin/master
