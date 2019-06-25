@@ -12,16 +12,11 @@
   color: #f30000;
 }
 
-body {
-  font-family: futuraregular, Helvetica, Arial, sans-serif !important;
-}
-
 .f-w-400 {
   font-weight: 400 !important;
 }
 
 ul.nav.header-nav > li > a {
-  font-family: "SFUFuturaBold";
   font-size: 13px;
   font-weight: 500;
 }
@@ -54,7 +49,6 @@ h4,
 h5,
 h6,
 .heading-font {
-  font-family: futuraregular, Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -76,7 +70,6 @@ h6,
 .price-wrapper .price span.product-price-catogory {
   font-size: 14px;
   color: #f30000;
-  font-family: SFUFUturaBook;
   font-weight: bold;
 }
 
@@ -159,7 +152,6 @@ h6,
 }
 
 span.widget-title.shop-sidebar {
-  font-family: SFUFuturaBold;
   color: #000;
   font-size: 15px;
   font-weight: 600;
@@ -173,7 +165,6 @@ span.widget-title.shop-sidebar {
 }
 
 .product-info h1.title-single-product {
-  font-family: SFUFuturaBold;
   font-size: 24px;
   font-weight: 700;
   color: black;
@@ -200,7 +191,6 @@ span.widget-title.shop-sidebar {
   padding: 40px 0 20px;
   color: #363f4d;
   display: inline-block;
-  font-family: SFUFuturaBold;
 }
 
 .acf-map {
@@ -234,13 +224,11 @@ span.widget-title.shop-sidebar {
 h1.title-head {
   font-size: 21px;
   color: #333;
-  font-family: SFUFuturaBold;
 }
 
 h1.title-head-page {
   font-size: 18px;
   color: #333;
-  font-family: SFUFuturaBold;
 }
 
 .tab-panels p {

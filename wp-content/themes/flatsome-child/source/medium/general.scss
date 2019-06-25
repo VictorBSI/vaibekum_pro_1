@@ -1,33 +1,12 @@
 $main_color: #f30000;
 @import "./footer";
-body {
-    font-family: futuraregular, Helvetica, Arial, sans-serif !important;
-}
-
 .f-w-400 {
     font-weight: 400!important;
 }
 
-// @font-face {
-//     font-family: 'SFUFuturaLight';
-//     src: url("futuralight.ttf")
-// }
-// @font-face {
-//     font-family: 'SFUFuturaBook';
-//     src: url("futurabook.ttf")
-// }
-// @font-face {
-//     font-family: 'SFUFuturaHeavy';
-//     src: url("futuraheavy.ttf")
-// }
-// @font-face {
-//     font-family: 'SFUFuturaExtraBold';
-//     src: url("futuraextrabold.ttf")
-// }
 //css text for nav top menu
 ul.nav.header-nav {
     >li>a {
-        font-family: 'SFUFuturaBold';
         font-size: 13px;
         font-weight: 500;
     }
@@ -63,7 +42,6 @@ h4,
 h5,
 h6,
 .heading-font {
-    font-family: futuraregular, Helvetica, Arial, sans-serif;
     font-weight: 500;
 }
 
@@ -86,7 +64,6 @@ h6,
     .price span.product-price-catogory {
         font-size: 14px;
         color: #f30000;
-        font-family: SFUFUturaBook;
         font-weight: bold;
     }
 }
@@ -162,7 +139,6 @@ h6,
 }
 
 span.widget-title.shop-sidebar {
-    font-family: SFUFuturaBold;
     color: #000;
     font-size: 15px;
     font-weight: 600;
@@ -177,7 +153,6 @@ span.widget-title.shop-sidebar {
 
 .product-info {
     h1.title-single-product {
-        font-family: SFUFuturaBold;
         font-size: 24px;
         font-weight: 700;
         color: black;
@@ -206,7 +181,6 @@ span.widget-title.shop-sidebar {
         padding: 40px 0 20px;
         color: #363f4d;
         display: inline-block;
-        font-family: SFUFuturaBold;
     }
 }
 
@@ -240,13 +214,11 @@ span.widget-title.shop-sidebar {
 h1.title-head {
     font-size: 21px;
     color: #333;
-    font-family: SFUFuturaBold;
 }
 
 h1.title-head-page {
     font-size: 18px;
     color: #333;
-    font-family: SFUFuturaBold;
 }
 
 .tab-panels {
