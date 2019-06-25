@@ -139,3 +139,21 @@ if(function_exists('acf_add_options_page')){
 		'redirect'	=> false,
     ));
 };
+
+//custom display in stock
+function woocommerce_get_custom_availability( $data, $product ) {
+    $html = '<span class="stock-brand-title"><strong><i class="fas fa-check-square"></i> Tình trạng: </strong></span>';
+    switch( $product->stock_status ) {
+        case 'instock':
+            $data = array( 'availability' => __( $html . 'Còn hàng', 'woocommerce' ), 'class' => 'in-stock' );
+        break;
+        case 'outofstock':
+            $data = array( 'availability' => __( $html. 'Hết hàng', 'woocommerce' ), 'class' => 'out-of-stock' );
+        break;
+        case 'onrequest':
+            $data = array( 'availability' => __( $html. 'Available to Order', 'woocommerce' ), 'class' => 'on-request' );
+        break;
+    }
+    return $data;
+}
+add_action('woocommerce_get_availability', 'woocommerce_get_custom_availability', 10, 2);

@@ -576,43 +576,93 @@ body.home #mega_menu {
 
 /* ho tro online single product */
 
-.support-content {
-    i.phone {
-        display: block;
-        padding: 5px;
-        font-size: 17px;
-        color: $main_color;
-    }
-    span.widget-title.shop-sidebar {
-        width: 100%;
-        background: #d60c0c;
-        font-size: 14px;
-        padding: 10px 0px;
-        color: #fff;
-        font-weight: 600;
-        margin-bottom: 0px;
-    }
-    .is-divider {
-        display: none;
-    }
-    .support_content {
-        border: 1px dashed #d60c0c;
-        border-top: none;
-        padding: 10px;
-        >p i {
-            margin-right: 5px;
+#product-sidebar {
+    .support-content {
+        i.phone {
+            display: block;
+            padding: 5px;
+            font-size: 17px;
+            color: $main_color;
+        }
+        span.widget-title.shop-sidebar {
+            width: 100%;
+            background: #d60c0c;
+            font-size: 14px;
+            padding: 10px 0px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+        .is-divider {
+            display: none;
+        }
+        .support_content {
+            border: 1px dashed #d60c0c;
+            border-top: none;
+            padding: 10px;
+            >p i {
+                margin-right: 5px;
+            }
+        }
+        .sub-showroom {
+            margin-bottom: 0;
+        }
+        span.color-support {
+            color: #279DE5;
+            font-size: 18px;
+            display: block;
+        }
+        .color-support-time-work {
+            color: #5a5a5a;
+            font-size: 15px;
         }
     }
-    .sub-showroom {
-        margin-bottom: 0;
+    .widget_recently_viewed_products {
+        span.widget-title.shop-sidebar {
+            width: 100%;
+            background: #d60c0c;
+            font-size: 14px;
+            padding: 10px 0px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+        .is-divider {
+            display: none;
+        }
+        ul.product_list_widget {
+            border: 1px dashed #d60c0c;
+            border-top: none;
+            padding: 10px;
+            >p i {
+                margin-right: 5px;
+            }
+            >li+li {
+                border-top: 1px solid #ececec!important;
+            }
+        }
+        .sub-showroom {
+            margin-bottom: 0;
+        }
+        span.color-support {
+            color: #279DE5;
+            font-size: 18px;
+            display: block;
+        }
+        .color-support-time-work {
+            color: #5a5a5a;
+            font-size: 15px;
+        }
     }
-    span.color-support {
-        color: #279DE5;
-        font-size: 18px;
-        display: block;
+}
+
+// status stock
+.stock-brand-title {
+    strong {
+        font-weight: bold;
+        color: #333;
     }
-    .color-support-time-work {
-        color: #5a5a5a;
-        font-size: 15px;
+    i {
+        color: #f30000;
     }
 }

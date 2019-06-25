@@ -577,14 +577,14 @@ body.home #mega_menu {
 
 /* ho tro online single product */
 
-.support-content i.phone {
+#product-sidebar .support-content i.phone {
   display: block;
   padding: 5px;
   font-size: 17px;
   color: #f30000;
 }
 
-.support-content span.widget-title.shop-sidebar {
+#product-sidebar .support-content span.widget-title.shop-sidebar {
   width: 100%;
   background: #d60c0c;
   font-size: 14px;
@@ -594,33 +594,85 @@ body.home #mega_menu {
   margin-bottom: 0px;
 }
 
-.support-content .is-divider {
+#product-sidebar .support-content .is-divider {
   display: none;
 }
 
-.support-content .support_content {
+#product-sidebar .support-content .support_content {
   border: 1px dashed #d60c0c;
   border-top: none;
   padding: 10px;
 }
 
-.support-content .support_content > p i {
+#product-sidebar .support-content .support_content > p i {
   margin-right: 5px;
 }
 
-.support-content .sub-showroom {
+#product-sidebar .support-content .sub-showroom {
   margin-bottom: 0;
 }
 
-.support-content span.color-support {
+#product-sidebar .support-content span.color-support {
   color: #279DE5;
   font-size: 18px;
   display: block;
 }
 
-.support-content .color-support-time-work {
+#product-sidebar .support-content .color-support-time-work {
   color: #5a5a5a;
   font-size: 15px;
+}
+
+#product-sidebar .widget_recently_viewed_products span.widget-title.shop-sidebar {
+  width: 100%;
+  background: #d60c0c;
+  font-size: 14px;
+  padding: 10px 0px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+#product-sidebar .widget_recently_viewed_products .is-divider {
+  display: none;
+}
+
+#product-sidebar .widget_recently_viewed_products ul.product_list_widget {
+  border: 1px dashed #d60c0c;
+  border-top: none;
+  padding: 10px;
+}
+
+#product-sidebar .widget_recently_viewed_products ul.product_list_widget > p i {
+  margin-right: 5px;
+}
+
+#product-sidebar .widget_recently_viewed_products ul.product_list_widget > li + li {
+  border-top: 1px solid #ececec !important;
+}
+
+#product-sidebar .widget_recently_viewed_products .sub-showroom {
+  margin-bottom: 0;
+}
+
+#product-sidebar .widget_recently_viewed_products span.color-support {
+  color: #279DE5;
+  font-size: 18px;
+  display: block;
+}
+
+#product-sidebar .widget_recently_viewed_products .color-support-time-work {
+  color: #5a5a5a;
+  font-size: 15px;
+}
+
+.stock-brand-title strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.stock-brand-title i {
+  color: #f30000;
 }
 
 
