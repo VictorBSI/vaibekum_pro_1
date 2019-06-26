@@ -12,3 +12,80 @@ Version: 3.0
 @media only screen and (max-width: 48em) {
     /*************** ADD MOBILE ONLY CSS HERE  ***************/
 }
+.container {
+    width: 1170px;
+}
+.menu-mega-icon {
+    background-image: url(../flatsome-child/images/menu-cate-icon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 5px;
+}
+#mega_menu > li > a > img {
+    max-width: initial;
+    width: auto !important;
+}
+#mega_menu > li:hover > a {
+    background: none;
+}
+#mega_menu > li > .menu-image {
+    left: 0px;
+    text-align: left;
+    background: none;
+}
+#mega_menu > li + li{
+    border-top: 1px dashed #ebebeb;
+}
+/* VẢI MAY ÁO DÀI */
+.content-title-vaibekum .section-head {
+    border-top: 3px solid #f30000;
+    position: relative;
+    margin-bottom: 20px;
+}
+.content-title-vaibekum .section-head .group-icon {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    background: #231f20;
+    padding: 10px;
+    display: inline-block;
+    color: #fff;
+    width: 39px;
+    height: 42px;
+    text-align: center;
+    line-height: 19px;
+    z-index: 1;
+}
+.content-title-vaibekum .section-head h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f30000;
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 45px;
+    height: 39px;
+    line-height: 39px;
+    position: relative;
+    font-weight: 500;
+    width: 15%!important;
+}
+.content-title-vaibekum .section-head h2:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 39px 39px 0 0;
+    border-color: #f30000 transparent transparent;
+    position: absolute;
+    right: -39px;
+    top: 0;
+}
+.read-more {
+    color: #f30000;
+    display: inline-block;
+    margin: 0;
+    line-height: 45px;
+    margin-left: 100px;
+    float: right;
+}
