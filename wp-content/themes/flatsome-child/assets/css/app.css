@@ -675,5 +675,9 @@ body.home #mega_menu {
   color: #f30000;
 }
 
+.section-content.relative .section-head h2 {
+  width: 15% !important;
+}
+
 
 /*# sourceMappingURL=app.css.map*/

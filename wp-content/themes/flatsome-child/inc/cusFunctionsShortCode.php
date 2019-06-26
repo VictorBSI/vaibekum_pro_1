@@ -33,3 +33,19 @@ if(!function_exists('create_short_code_support_online')) {
   	}
 	  add_shortcode('SUPPORT-ONLINE', 'create_short_code_support_online');
 }
+
+/* CREATE SHORTCODE TITLE */
+if(!function_exists('create_shortcode_title')) {
+	function create_shortcode_title() {
+		$xhtml = '';
+		$xhtml.= '<div class="container section-head">
+						<span class="group-icon">
+							<i class="fab fa-dashcube" aria-hidden="true"></i>
+						</span>
+						<h2>Vải may áo dài</h2>
+						<div class="read-more"><span>Xem thêm</span></div>
+				 </div>';
+		return $xhtml;
+	}
+	add_shortcode('CONTENT-TITLE-1', 'create_shortcode_title');
+}
