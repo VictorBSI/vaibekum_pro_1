@@ -89,7 +89,23 @@ Version: 3.0
     margin-left: 100px;
     float: right;
 }
-
+/*MENU*/
+.home #mega-menu-wrap {
+    width: 51%;
+}
+/* #mega_menu > li > .menu-image img{
+    display: block;
+} */
+#mega_menu > li:hover > ul.sub-menu {
+    width: 100%;
+    display: inline-table;
+}
+/* #mega_menu > li:hover > ul.sub-menu li {
+    background: #fff;
+    text-align: center;
+    white-space: nowrap;
+    display: table-cell;
+} */
 /* SẢN PHẨM BÁN CHẠY */
 .header-bottom {
     background-color: #f1f1f1 !important;
