@@ -98,3 +98,17 @@ Version: 3.0
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
+/* NÚT XÓA SẢN PHẨM */
+.woocommerce a.remove{width:30px;height:22px;position:relative;transition:opacity 200ms;vertical-align:top;display:block;-webkit-appearance:none;background:none;border:none;cursor:pointer;outline:none;padding:0;text-indent:-9999px}
+.woocommerce a.remove:before,.woocommerce a.remove:after{background:url(../flatsome-child/images/icon-remove-product.png) 0 0 no-repeat;left:8px;position:absolute;right:8px;top:2px;display:inline-block;content:''}
+.woocommerce a.remove:before{height:6px;transform-origin:-7% 100%;-moz-transform-origin:-7% 100%;-webkit-transform-origin:-7% 100%;transition:transform 150ms;-moz-transition:transform 150ms;-webkit-transition:transform 150ms;width:14px}
+.woocommerce a.remove:after{background-position:-1px -4px;height:12px;margin-left:1px;margin-right:2px;margin-top:4px;width:11px}
+.woocommerce a.remove:hover:before{transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transition:transform 250ms;-moz-transition:transform 250ms;-webkit-transition:transform 250ms}
+.woocommerce a.remove:hover{background:transparent}
+/* NÚT XÓA SẢN PHẨM TRANG CHỦ */
+.home a.remove{width:30px;height:22px;position:relative;transition:opacity 200ms;vertical-align:top;display:block;-webkit-appearance:none;background:none;border:none;cursor:pointer;outline:none;padding:0;text-indent:-9999px}
+.home a.remove:before,.home a.remove:after{background:url(../flatsome-child/images/icon-remove-product.png) 0 0 no-repeat;left:8px;position:absolute;right:8px;top:2px;display:inline-block;content:''}
+.home a.remove:before{height:6px;transform-origin:-7% 100%;-moz-transform-origin:-7% 100%;-webkit-transform-origin:-7% 100%;transition:transform 150ms;-moz-transition:transform 150ms;-webkit-transition:transform 150ms;width:14px}
+.home a.remove:after{background-position:-1px -4px;height:12px;margin-left:1px;margin-right:2px;margin-top:4px;width:11px}
+.home a.remove:hover:before{transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transition:transform 250ms;-moz-transition:transform 250ms;-webkit-transition:transform 250ms}
+.home a.remove:hover{background:transparent}
