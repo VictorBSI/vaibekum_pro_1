@@ -67,7 +67,7 @@ function my_acf_init() {
 }
 add_action('acf/init', 'my_acf_init');
 
-function add_breakcrumb(){
+function create_short_code_add_breadcrumbs(){
     if(!is_front_page()){
         echo '<div class="row row-main">';
         echo '<div class="p-15">';
@@ -77,7 +77,8 @@ function add_breakcrumb(){
         echo '</div></div>';
     }
 }
-add_action('pc_after_header', 'add_breakcrumb');
+add_shortcode('CUSTOMMER-YOAST-BREADCRUMB', 'create_short_code_add_breadcrumbs');
+// add_action('pc_after_header', 'add_breakcrumb');
 
 
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
@@ -301,3 +302,21 @@ function ra_change_translate_text_multiple( $translated ) {
     return $translated;
 }
 add_filter( 'gettext', 'ra_change_translate_text_multiple', 20 );
+
+/* SỬ DỤNG STMP GMAIL */
+add_action( 'phpmailer_init', function( $phpmailer ) {
+    $contentText = get_field('vbk_from_name_text_gmail','option');
+    $userName = get_field('vbk_username_gmail','option');
+    $passWord = get_field('vbk_password_app_gmail','option');
+    if ( !is_object( $phpmailer ) )
+    $phpmailer = (object) $phpmailer;
+    $phpmailer->Mailer     = 'smtp';
+    $phpmailer->Host       = 'smtp.gmail.com';
+    $phpmailer->SMTPAuth   = 1;
+    $phpmailer->Port       = 587;
+    $phpmailer->Username   = ''.$userName.'';
+    $phpmailer->Password   = ''.$passWord.'';
+    $phpmailer->SMTPSecure = 'TLS';
+    $phpmailer->From       = ''.$userName.'';
+    $phpmailer->FromName   = ''.$contentText.'';
+});
