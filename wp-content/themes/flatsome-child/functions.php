@@ -156,3 +156,132 @@ function vbk_wc_custom_get_price_html( $price, $product ) {
     return $price;
 }
 add_filter( 'woocommerce_get_price_html', 'vbk_wc_custom_get_price_html', 10, 2 );
+
+/* DỊCH TỪ WOOCOMMERCE CHUNG */
+function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain ) {
+    switch ( $translated_text ) {
+        case 'Posts found' :
+            $translated_text = __( 'Bài viết tìm thấy', 'woocommerce' );
+            break;
+        case 'View cart' :
+            $translated_text = __( 'Xem giỏ hàng', 'woocommerce' );
+            break;
+        case 'Checkout' :
+            $translated_text = __( 'Thanh toán', 'woocommerce' );
+            break;
+        case 'Search' :
+            $translated_text = __( 'Tìm kiếm sản phẩm ...', 'woocommerce' );
+            break;
+        case 'Description' :
+            $translated_text = __( 'Chi tiết', 'woocommerce' );
+            break;
+        case 'Be the first to review' :
+            $translated_text = __( 'Hãy là người đầu tiên nhận xét', 'woocommerce' );
+            break;
+        case 'Cart' :
+            $translated_text = __( 'Giỏ hàng', 'woocommerce' );
+            break;
+        case 'Subtotal' :
+            $translated_text = __( 'Tổng cộng', 'woocommerce' );
+            break;
+        case 'Product' :
+            $translated_text = __( 'Sản phẩm', 'woocommerce' );
+            break;
+        case 'Price' :
+            $translated_text = __( 'Giá', 'woocommerce' );
+            break;
+        case 'Quantity' :
+            $translated_text = __( 'Số lượng', 'woocommerce' );
+            break;
+        case 'Total' :
+            $translated_text = __( 'Tổng cộng', 'woocommerce' );
+            break;
+        case 'Cart totals' :
+            $translated_text = __( 'Tổng số lượng', 'woocommerce' );
+            break;
+        case 'Proceed to checkout' :
+            $translated_text = __( 'Tiến hành thanh toán', 'woocommerce' );
+            break;
+        case 'Coupon' :
+            $translated_text = __( 'Mã giảm giá', 'woocommerce' );
+            break;
+        case 'Coupon code' :
+            $translated_text = __( 'Mã ưu đãi', 'woocommerce' );
+            break;
+        case 'Apply coupon' :
+            $translated_text = __( 'Áp dụng mã ưu đãi', 'woocommerce' );
+            break;
+        case '← Continue shopping' :
+            $translated_text = __( 'Tiếp tục xem sản phẩm', 'woocommerce' );
+            break;
+        case 'Update cart' :
+            $translated_text = __( 'Cập nhật giỏ hàng', 'woocommerce' );
+            break;
+        case 'Checkout' :
+            $translated_text = __( 'Thanh toán', 'woocommerce' );
+            break;
+        case 'Billing details' :
+            $translated_text = __( 'Thông tin thanh toán', 'woocommerce' );
+            break;
+        case 'Additional information' :
+            $translated_text = __( 'Thông tin bổ sung', 'woocommerce' );
+            break;
+        case 'Your order' :
+            $translated_text = __( 'Đơn hàng của bạn', 'woocommerce' );
+            break;
+        case 'Place order' :
+            $translated_text = __( 'Đặt hàng', 'woocommerce' );
+            break;
+        case 'Shopping Cart' :
+            $translated_text = __( 'Giỏ hàng', 'woocommerce' );
+            break;
+        case 'Checkout details' :
+            $translated_text = __( 'Thanh toán', 'woocommerce' );
+            break;
+        case 'Order Complete' :
+            $translated_text = __( 'Hoàn thành', 'woocommerce' );
+            break;
+        case 'Return to shop' :
+            $translated_text = __( 'Quay trở lại cửa hàng', 'woocommerce' );
+            break;
+        case 'Tiếp tục xem sản phẩm' :
+            $translated_text = __( 'Quay lại xem SP', 'woocommerce' );
+            break;
+        case 'We look forward to fulfilling your order soon.' :
+            $translated_text = __( '', 'woocommerce' );
+            break;
+        case 'Cảm ơn đã đặt hàng. Đơn hàng sẽ bị tạm giữ cho đến khi chúng tôi xác nhận thanh toán hoàn thành. Trong thời gian chờ đợi, đây là lời nhắc về những gì bạn đã đặt hàng:' :
+            $translated_text = __( 'Cám ơn bạn đã đặt hàng, vui lòng xem lại thông tin bên dưới kỹ càng trước khi thanh toán.', 'woocommerce' );
+            break;
+        case 'Địa chỉ thanh toán' :
+            $translated_text = __( 'Địa chỉ giao hàng', 'woocommerce' );
+            break;
+        case 'Send email price' :
+            $translated_text = __( 'Gởi báo giá', 'woocommerce' );
+            break;
+        case 'Tìm kiếm' :
+            $translated_text = __( 'Tìm kiếm sản phẩm ...', 'woocommerce' );
+            break;
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'flatsome_mayphotocomvn_text_strings', 20, 3 );
+
+/* DỊCH TỪ WOOCOMMERCE KHÔNG DỊCH ĐƯỢC */
+function ra_change_translate_text_multiple( $translated ) {
+    $text = array(
+        'Subtotal' => 'Tổng cộng',
+        'Tổng' => 'Thành tiền',
+        'Thành tiền cộng' => 'Tổng cộng',
+        'Thành tiền số phụ:' => 'Tổng cộng :',
+        'Tổng cộng:' => 'Thành tiền :',
+        'Cám ơn!' => '',
+        'Cảm ơn đã đọc.' => '',
+        'Thuế VAT:' => 'thuế VAT :',
+        'Lưu ý:' => 'Lưu ý :',
+        'Note:' => 'Lưu ý :',
+    );
+    $translated = str_ireplace( array_keys($text), $text, $translated );
+    return $translated;
+}
+add_filter( 'gettext', 'ra_change_translate_text_multiple', 20 );
