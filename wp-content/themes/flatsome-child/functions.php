@@ -27,15 +27,15 @@ function pc_add_button_chat(){
 
 add_action('add_button_chat', 'pc_add_button_chat',11,1);
 
-function edit_format_current_dong($price,$product){
-    if(is_single()){
-        $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
-    }else{
-        $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
-    }
-    return $price;
-}
-add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
+// function edit_format_current_dong($price,$product){
+//     if(is_single()){
+//         $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
+//     }else{
+//         $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
+//     }
+//     return $price;
+// }
+// add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
 
 function remove_rating_single_product(){
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
@@ -141,8 +141,18 @@ function woocommerce_get_custom_availability( $data, $product ) {
 }
 add_action('woocommerce_get_availability', 'woocommerce_get_custom_availability', 10, 2);
 
-/* THAY ĐỔI 0đ THÀNH LIÊN HỆ*/
+/* THAY ĐỔI TIỀN VIỆT NAM ĐỒNG */
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+function change_existing_currency_symbol($currency_symbol, $currency) {
+    switch ($currency) {
+        case 'VND':
+            $currency_symbol = ' ₫';
+            break;
+    }
+    return $currency_symbol;
+}
 
+/* THAY ĐỔI 0đ THÀNH LIÊN HỆ*/
 function vbk_wc_custom_get_price_html( $price, $product ) {
     if ( $product->get_price() == 0 ) {
         if ( $product->is_on_sale() && $product->get_regular_price() ) {
@@ -160,6 +170,9 @@ add_filter( 'woocommerce_get_price_html', 'vbk_wc_custom_get_price_html', 10, 2 
 /* DỊCH TỪ WOOCOMMERCE CHUNG */
 function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain ) {
     switch ( $translated_text ) {
+        case '₫' :
+            $translated_text = __( ' đ', 'woocommerce' );
+            break;
         case 'Posts found' :
             $translated_text = __( 'Bài viết tìm thấy', 'woocommerce' );
             break;
@@ -261,6 +274,9 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
             break;
         case 'Tìm kiếm' :
             $translated_text = __( 'Tìm kiếm sản phẩm ...', 'woocommerce' );
+            break;
+        case 'No products in the cart.' :
+            $translated_text = __( 'Chưa có sản phẩm trong giỏ hàng.', 'woocommerce' );
             break;
     }
     return $translated_text;

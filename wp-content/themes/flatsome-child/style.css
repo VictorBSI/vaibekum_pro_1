@@ -112,3 +112,8 @@ Version: 3.0
 .home a.remove:after{background-position:-1px -4px;height:12px;margin-left:1px;margin-right:2px;margin-top:4px;width:11px}
 .home a.remove:hover:before{transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transition:transform 250ms;-moz-transition:transform 250ms;-webkit-transition:transform 250ms}
 .home a.remove:hover{background:transparent}
+
+/* CSS SỐ TIỀN */
+.price-wrapper span.amount {
+    color: #f30000;
+}
