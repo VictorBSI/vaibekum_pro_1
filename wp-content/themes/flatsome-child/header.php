@@ -45,6 +45,6 @@
    </div><!-- header-wrapper-->
 </header>
 
-<?php do_action('pc_after_header'); ?>
+<!-- <?php do_action('pc_after_header'); ?> -->
 
 <main id="main" class="<?php flatsome_main_classes();  ?>">
