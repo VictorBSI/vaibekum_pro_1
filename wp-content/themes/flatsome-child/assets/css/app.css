@@ -23,6 +23,7 @@ ul.nav.header-nav > li > a {
 
 .chat_btn {
   margin-top: 15px;
+  padding-top: 5px;
 }
 
 .chat_btn a {
@@ -32,6 +33,16 @@ ul.nav.header-nav > li > a {
   text-transform: unset;
   margin-top: 0 !important;
   margin-bottom: 0;
+}
+
+/*display when added cart*/
+
+.add_to_cart_button.added {
+  display: unset;
+}
+
+a.added_to_cart {
+  display: none;
 }
 
 .error-404 .page-title {

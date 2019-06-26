@@ -15,6 +15,7 @@ ul.nav.header-nav {
 // button chat content product
 .chat_btn {
     margin-top: 15px;
+    padding-top: 5px;
     a {
         color: #fff;
         border-radius: 10px;
@@ -23,6 +24,17 @@ ul.nav.header-nav {
         margin-top: 0!important;
         margin-bottom: 0;
     }
+}
+
+
+/*display when added cart*/
+
+.add_to_cart_button.added {
+    display: unset;
+}
+
+a.added_to_cart {
+    display: none;
 }
 
 // text page 404
@@ -666,10 +678,11 @@ body.home #mega_menu {
         color: #f30000;
     }
 }
-.section-content.relative{
-    .section-head{
-        h2{
+
+.section-content.relative {
+    .section-head {
+        h2 {
             width: 15%!important;
         }
-    } 
+    }
 }

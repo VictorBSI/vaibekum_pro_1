@@ -2,7 +2,7 @@
 // Add custom Theme Functions here
 require 'inc/widget.php';
 require 'inc/cusFunctionsShortCode.php';
-
+require 'inc/register_block.php';
 function setup_script_theme()
 {
     wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));

@@ -83,7 +83,7 @@ if ( $out_of_stock ) $classes[] = 'out-of-stock';
 				do_action( 'add_button_chat' );
 				echo '</div>';
 				echo '<div class="box-hover hidden-sm hidden-xs hidden-m">';
-				do_action( 'pc_add_to_cart' );
+				echo do_shortcode('[ADD_CART_PC]');
 				echo '</div>';
 				do_action( 'flatsome_product_box_after' );
 
