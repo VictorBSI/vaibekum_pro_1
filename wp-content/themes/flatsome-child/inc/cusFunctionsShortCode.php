@@ -36,6 +36,7 @@ if (!function_exists('create_short_code_support_online')) {
 }
 
 /* CREATE SHORTCODE TITLE */
+/** ROW ONE */
 if (!function_exists('create_shortcode_title')) {
 	function create_shortcode_title()
 	{
@@ -70,7 +71,146 @@ if (!function_exists('create_shortcode_title')) {
 	}
 	add_shortcode('CONTENT-TITLE-1', 'create_shortcode_title');
 }
-
+/** ROW TWO */
+if (!function_exists('create_shortcode_title_2')) {
+	function create_shortcode_title_2()
+	{
+		$xhtml = '';
+		$choose = get_field('vbk_choose_row_two', 'option');
+		if($choose == 'Chọn tự nhập'){
+			$xhtml .= 	'<div class="container section-head">
+							<span class="group-icon">
+								<i class="fab fa-dashcube" aria-hidden="true"></i>
+							</span>
+							<h2>'.get_field('vbk_content_title_row_two', 'option').'</h2>
+						</div>';
+		}else{
+			$category_id = get_field('vbk_choosen_category_two', 'option');
+			if(!empty($category_id)){
+				$term = get_term_by( 'id', absint( $category_id ), 'product_cat' ); //get category obj
+				$name = $term->name;
+				$category_link = get_term_link( $category_id, 'product_cat' );
+				$xhtml .= '<div class="container section-head">
+									<span class="group-icon">
+										<i class="fab fa-dashcube" aria-hidden="true"></i>
+									</span>
+									<h2>'.$name.'</h2>
+									<div class="read-more"><a href="'.$category_link.'"><span>Xem thêm</span></a></div>
+						</div>';
+			}
+			
+		}
+		
+		
+		return $xhtml;
+	}
+	add_shortcode('CONTENT-TITLE-2', 'create_shortcode_title_2');
+}
+/** ROW THREE */
+if (!function_exists('create_shortcode_title_3')) {
+	function create_shortcode_title_3()
+	{
+		$xhtml = '';
+		$choose = get_field('vbk_choose_row_three', 'option');
+		if($choose == 'Chọn tự nhập'){
+			$xhtml .= 	'<div class="container section-head">
+							<span class="group-icon">
+								<i class="fab fa-dashcube" aria-hidden="true"></i>
+							</span>
+							<h2>'.get_field('vbk_content_title_row_three', 'option').'</h2>
+						</div>';
+		}else{
+			$category_id = get_field('vbk_choosen_category_three', 'option');
+			if(!empty($category_id)){
+				$term = get_term_by( 'id', absint( $category_id ), 'product_cat' ); //get category obj
+				$name = $term->name;
+				$category_link = get_term_link( $category_id, 'product_cat' );
+				$xhtml .= '<div class="container section-head">
+									<span class="group-icon">
+										<i class="fab fa-dashcube" aria-hidden="true"></i>
+									</span>
+									<h2>'.$name.'</h2>
+									<div class="read-more"><a href="'.$category_link.'"><span>Xem thêm</span></a></div>
+						</div>';
+			}
+			
+		}
+		
+		
+		return $xhtml;
+	}
+	add_shortcode('CONTENT-TITLE-3', 'create_shortcode_title_3');
+}
+/** ROW FOUR */
+if (!function_exists('create_shortcode_title_4')) {
+	function create_shortcode_title_4()
+	{
+		$xhtml = '';
+		$choose = get_field('vbk_choose_row_four', 'option');
+		if($choose == 'Chọn tự nhập'){
+			$xhtml .= 	'<div class="container section-head">
+							<span class="group-icon">
+								<i class="fab fa-dashcube" aria-hidden="true"></i>
+							</span>
+							<h2>'.get_field('vbk_content_title_row_four', 'option').'</h2>
+						</div>';
+		}else{
+			$category_id = get_field('vbk_choosen_category_four', 'option');
+			if(!empty($category_id)){
+				$term = get_term_by( 'id', absint( $category_id ), 'product_cat' ); //get category obj
+				$name = $term->name;
+				$category_link = get_term_link( $category_id, 'product_cat' );
+				$xhtml .= '<div class="container section-head">
+									<span class="group-icon">
+										<i class="fab fa-dashcube" aria-hidden="true"></i>
+									</span>
+									<h2>'.$name.'</h2>
+									<div class="read-more"><a href="'.$category_link.'"><span>Xem thêm</span></a></div>
+						</div>';
+			}
+			
+		}
+		
+		
+		return $xhtml;
+	}
+	add_shortcode('CONTENT-TITLE-4', 'create_shortcode_title_4');
+}
+/** ROW FIVE */
+if (!function_exists('create_shortcode_title_5')) {
+	function create_shortcode_title_5()
+	{
+		$xhtml = '';
+		$choose = get_field('vbk_choose_row_five', 'option');
+		if($choose == 'Chọn tự nhập'){
+			$xhtml .= 	'<div class="container section-head">
+							<span class="group-icon">
+								<i class="fab fa-dashcube" aria-hidden="true"></i>
+							</span>
+							<h2>'.get_field('vbk_content_title_row_five', 'option').'</h2>
+						</div>';
+		}else{
+			$category_id = get_field('vbk_choosen_category_five', 'option');
+			if(!empty($category_id)){
+				$term = get_term_by( 'id', absint( $category_id ), 'product_cat' ); //get category obj
+				$name = $term->name;
+				$category_link = get_term_link( $category_id, 'product_cat' );
+				$xhtml .= '<div class="container section-head">
+									<span class="group-icon">
+										<i class="fab fa-dashcube" aria-hidden="true"></i>
+									</span>
+									<h2>'.$name.'</h2>
+									<div class="read-more"><a href="'.$category_link.'"><span>Xem thêm</span></a></div>
+						</div>';
+			}
+			
+		}
+		
+		
+		return $xhtml;
+	}
+	add_shortcode('CONTENT-TITLE-5', 'create_shortcode_title_5');
+}
 /* CREATE SHORTCODE ADD TO CART */
 
 function pc_create_add_to_cart()
