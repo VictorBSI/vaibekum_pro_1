@@ -714,5 +714,18 @@ body.home #mega_menu {
   width: 15% !important;
 }
 
+.slider-nav-reveal button.flickity-prev-next-button,
+.slider-nav-reveal button.flickity-prev-next-button:hover {
+  top: 0;
+  margin: auto !important;
+  height: 30px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.slider-nav-reveal button.flickity-prev-next-button svg,
+.slider-nav-reveal button.flickity-prev-next-button:hover svg {
+  margin-top: unset !important;
+}
+
 
 /*# sourceMappingURL=app.css.map*/

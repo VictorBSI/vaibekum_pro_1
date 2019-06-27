@@ -282,6 +282,9 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
         case 'Related products' :
             $translated_text = __('Sản phẩm cùng loại', 'woocommerce');
             break;
+        case 'No products were found matching your selection.' :
+            $translated_text = __('Không có sản phẩm nào trong danh mục này.', 'woocommerce');
+            break;
     }
     return $translated_text;
 }
