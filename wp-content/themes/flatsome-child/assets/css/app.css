@@ -531,9 +531,10 @@ body.home #mega_menu {
 
 #mega_menu > li > .menu-image {
   position: absolute;
+  margin-top: 0px !important;
   left: 100%;
-  top: 0px;
-  display: none;
+  top: 6px;
+  display: block;
   width: 200%;
   background: #fff;
   text-align: right;
@@ -547,7 +548,6 @@ body.home #mega_menu {
   margin-top: 1px;
 }
 
-#mega_menu > li:hover > .menu-image,
 #mega_menu > li:hover > ul.sub-menu {
   display: block;
 }
@@ -574,7 +574,6 @@ body.home #mega_menu {
   min-height: 240px;
   background: #fff;
   text-align: right;
-  display: none;
   z-index: 2;
 }
 
