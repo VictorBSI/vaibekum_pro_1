@@ -2,7 +2,7 @@
 // Add custom Theme Functions here
 require 'inc/widget.php';
 require 'inc/cusFunctionsShortCode.php';
-require 'inc/register_block.php';
+require 'inc/reg_sidebar.php';
 function setup_script_theme()
 {
     wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
@@ -278,6 +278,9 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
             break;
         case 'No products in the cart.' :
             $translated_text = __( 'Chưa có sản phẩm trong giỏ hàng.', 'woocommerce' );
+            break;
+        case 'Related products' :
+            $translated_text = __('Sản phẩm cùng loại', 'woocommerce');
             break;
     }
     return $translated_text;
