@@ -108,7 +108,15 @@ h6,
             transition: all 0.2s ease-in-out;
             background-color: hsl(0, 0%, 95%);
             a {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 color: #bec2c7;
+            }
+            a.added {
+                display: none;
             }
             height: 40px;
             width: 40px;
@@ -531,10 +539,7 @@ body.home #mega_menu {
 }
 
 #mega_menu>li>.menu-image {
-    position: absolute;
     margin-top: 0px!important;
-    left: 100%;
-    top: 6px;
     display: block;
     width: 200%;
     background: #fff;
@@ -542,11 +547,15 @@ body.home #mega_menu {
 }
 
 #mega_menu>li>.menu-image>img {
-    position: relative;
+    position: absolute;
     z-index: 1;
     max-width: 49%;
     max-height: 330px;
     margin-top: 1px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 6px;
 }
 
 #mega_menu>li:hover>ul.sub-menu {

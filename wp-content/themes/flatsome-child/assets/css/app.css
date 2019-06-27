@@ -124,7 +124,19 @@ h6,
 }
 
 .col-inner .box-hover .wrap_add_cart a {
+  width: 40px;
+  height: 40px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
   color: #bec2c7;
+}
+
+.col-inner .box-hover .wrap_add_cart a.added {
+  display: none;
 }
 
 .col-inner .box-hover .wrap_add_cart a:hover {
@@ -531,10 +543,7 @@ body.home #mega_menu {
 }
 
 #mega_menu > li > .menu-image {
-  position: absolute;
   margin-top: 0px !important;
-  left: 100%;
-  top: 6px;
   display: block;
   width: 200%;
   background: #fff;
@@ -542,11 +551,15 @@ body.home #mega_menu {
 }
 
 #mega_menu > li > .menu-image > img {
-  position: relative;
+  position: absolute;
   z-index: 1;
   max-width: 49%;
   max-height: 330px;
   margin-top: 1px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 6px;
 }
 
 #mega_menu > li:hover > ul.sub-menu {
