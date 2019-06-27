@@ -22,20 +22,11 @@ function remove_price_product()
 add_action('init', 'remove_price_product');
 
 function pc_add_button_chat(){
-    echo '<a href="https://m.me/vaibekum.vn" class="btn button primary">Chat với người bán</a>';
+    $mg = get_field('vbk_messenger_chat', 'option');
+    echo '<a href="'.$mg.'" class="btn button primary">Chat với người bán</a>';
 }
 
 add_action('add_button_chat', 'pc_add_button_chat',11,1);
-
-// function edit_format_current_dong($price,$product){
-//     if(is_single()){
-//         $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
-//     }else{
-//         $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
-//     }
-//     return $price;
-// }
-// add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
 
 function remove_rating_single_product(){
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
@@ -78,8 +69,6 @@ function create_short_code_add_breadcrumbs(){
     }
 }
 add_shortcode('CUSTOMMER-YOAST-BREADCRUMB', 'create_short_code_add_breadcrumbs');
-// add_action('pc_after_header', 'add_breakcrumb');
-
 
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
     function wcs_woo_remove_reviews_tab($tabs) {
@@ -122,7 +111,10 @@ if(function_exists('acf_add_options_page')){
 		'redirect'	=> false,
     ));
 };
-
+if(function_exists('show_image_feedback')){
+    $num_image = get_field('vbk_number_feedback', 'option');
+    echo $num_image;
+}
 
 //custom display in stock
 function woocommerce_get_custom_availability( $data, $product ) {
