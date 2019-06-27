@@ -82,12 +82,14 @@ h6,
 
 // box add to cart hover
 .col-inner {
-    &:hover {
-        .box-hover {
-            opacity: 1;
-        }
-        .price-wrapper {
-            opacity: 0;
+    >.product-small {
+        &:hover {
+            .box-hover {
+                opacity: 1;
+            }
+            .price-wrapper {
+                opacity: 0;
+            }
         }
     }
     .price-wrapper {

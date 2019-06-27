@@ -84,11 +84,11 @@ h6,
   font-weight: bold;
 }
 
-.col-inner:hover .box-hover {
+.col-inner > .product-small:hover .box-hover {
   opacity: 1;
 }
 
-.col-inner:hover .price-wrapper {
+.col-inner > .product-small:hover .price-wrapper {
   opacity: 0;
 }
 
