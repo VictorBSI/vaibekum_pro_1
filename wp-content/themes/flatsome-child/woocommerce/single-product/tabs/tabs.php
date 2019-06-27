@@ -68,6 +68,7 @@ if ( ! empty( $tabs ) ) : ?>
 	</div>
 <?php endif; ?>
 <?php
+	
 	if(is_active_sidebar('sidebar-single-bellow')){
 		dynamic_sidebar('sidebar-single-bellow');
 	}

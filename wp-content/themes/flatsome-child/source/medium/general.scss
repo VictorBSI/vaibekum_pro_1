@@ -588,6 +588,29 @@ body.home #mega_menu {
 
 /* ho tro online single product */
 
+.product-sidebar-follow {
+    span.widget-title.shop-sidebar.sale_product {
+        width: 100%;
+        background: #d60c0c;
+        font-size: 14px;
+        padding: 10px 0px;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 0px;
+    }
+    ul.product_list_widget {
+        border: 1px dashed #d60c0c;
+        border-top: none;
+        padding: 10px;
+        >p i {
+            margin-right: 5px;
+        }
+        >li+li {
+            border-top: 1px solid #ececec!important;
+        }
+    }
+}
+
 #product-sidebar {
     .support-content {
         i.phone {
