@@ -40,13 +40,32 @@ if (!function_exists('create_shortcode_title')) {
 	function create_shortcode_title()
 	{
 		$xhtml = '';
-		$xhtml .= '<div class="container section-head">
-						<span class="group-icon">
-							<i class="fab fa-dashcube" aria-hidden="true"></i>
-						</span>
-						<h2>Vải may áo dài</h2>
-						<div class="read-more"><span>Xem thêm</span></div>
-				 </div>';
+		$choose = get_field('vbk_choose_row_one', 'option');
+		if($choose == 'Chọn tự nhập'){
+			$xhtml .= 	'<div class="container section-head">
+							<span class="group-icon">
+								<i class="fab fa-dashcube" aria-hidden="true"></i>
+							</span>
+							<h2>'.get_field('vbk_content_title_row_one', 'option').'</h2>
+						</div>';
+		}else{
+			$category_id = get_field('vbk_choosen_category_one', 'option');
+			if(!empty($category_id)){
+				$term = get_term_by( 'id', absint( $category_id ), 'product_cat' ); //get category obj
+				$name = $term->name;
+				$category_link = get_term_link( $category_id, 'product_cat' );
+				$xhtml .= '<div class="container section-head">
+									<span class="group-icon">
+										<i class="fab fa-dashcube" aria-hidden="true"></i>
+									</span>
+									<h2>'.$name.'</h2>
+									<div class="read-more"><a href="'.$category_link.'"><span>Xem thêm</span></a></div>
+						</div>';
+			}
+			
+		}
+		
+		
 		return $xhtml;
 	}
 	add_shortcode('CONTENT-TITLE-1', 'create_shortcode_title');
