@@ -65,6 +65,9 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    if ($(window).width() <= 849) {
+
+    }
     if ($(window).width() < 1024) {
         var showMobile = true
         $('#mega_menu li > .toggle').on('click', function(e) {

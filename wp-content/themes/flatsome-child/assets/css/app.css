@@ -823,6 +823,20 @@ body.home #mega_menu {
   .container {
     width: 100% !important;
   }
+
+  #mega_menu.menu > li > ul.sub-menu {
+    margin-top: 0px !important;
+    box-shadow: unset !important;
+    border: none !important;
+  }
+
+  #mega_menu.menu > li > ul.sub-menu > li > a {
+    padding: 10px 49px;
+  }
+
+  #mega_menu.menu > li:hover > ul.sub-menu {
+    margin-top: 0px !important;
+  }
 }
 
 
