@@ -26,8 +26,6 @@ function setup_script_theme()
 add_action('wp_enqueue_scripts', 'setup_script_theme');
 
 
-
-
 function vaibekum_load_theme_scripts() {
 	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
 }

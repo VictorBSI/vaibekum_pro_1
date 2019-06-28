@@ -805,3 +805,18 @@ body.home #mega_menu {
 a.added_to_cart:after {
     content: none!important;
 }
+
+
+/* TITLE THANH TOAN */
+
+#content {
+    .col-inner {
+        header.entry-header {
+            h1.entry-title.mb.uppercase.title-head-page {
+                text-align: center;
+                padding-top: 15px;
+                font-weight: normal;
+            }
+        }
+    }
+}
