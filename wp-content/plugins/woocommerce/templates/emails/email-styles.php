@@ -84,12 +84,12 @@ body {
 
 #template_footer #credit {
 	border: 0;
-	color: <?php echo esc_attr( $base_lighter_40 ); ?>;
+	color: #FE0000;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 12px;
 	line-height: 125%;
 	text-align: center;
-	padding: 0 48px 48px 48px;
+	padding: 0px;
 }
 
 #body_content {
@@ -97,7 +97,7 @@ body {
 }
 
 #body_content table td {
-	padding: 48px 48px 0;
+	padding: 15px 15px 0;
 }
 
 #body_content table td td {
@@ -126,6 +126,7 @@ body {
 
 #body_content p {
 	margin: 0 0 16px;
+	margin-top: -15px;
 }
 
 #body_content_inner {
@@ -158,14 +159,14 @@ body {
 }
 
 #header_wrapper {
-	padding: 36px 48px;
+	padding: 5px 15px;
 	display: block;
 }
 
 h1 {
 	color: <?php echo esc_attr( $base ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: 300;
 	line-height: 150%;
 	margin: 0;
@@ -180,7 +181,7 @@ h2 {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 130%;
-	margin: 0 0 18px;
+	margin: 0 0 10px;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
@@ -213,4 +214,86 @@ img {
 	vertical-align: middle;
 	margin-<?php echo is_rtl() ? 'left' : 'right'; ?>: 10px;
 }
+#template_footer p {
+	font-size: 14px;
+	margin-bottom: 15px !important;
+}
+.th {
+	border: 1px dashed #222 !important;
+	color: #333 !important;
+	border-color: currentColor !important;
+}
+.td {
+	border: 1px dashed #222 !important;
+	color: #333 !important;
+	border-color: currentColor !important;
+}
+.order-email-product {
+	border: none !important;
+	border-left: 1px dashed #000000 !important;
+	border-right: 1px dashed #000000 !important;
+	border-top: 1px dashed #000000 !important;
+}
+.order-email-product td:first-child{
+	border-left:0px solid #000000 !important;
+	border-right: 1px dashed #000000 !important;
+}
+.order-email-product tr td:first-child{
+	border-left:0px solid #000000 !important;
+	border-right: 0px dashed #000000 !important;
+	border-bottom: 1px dashed #000000 !important;
+}
+.order-email-product td:last-child{
+	border-left:0px solid #000000 !important;
+	border-right: 0px solid #000000;
+	border: none !important;
+	border-top: 0px dashed #000000 !important;
+	border-bottom: 1px dashed #000000 !important;
+}
+.order-email-product th:first-child{
+	border-left:0px solid #000000 !important;
+	border-top: 0px solid #000000 !important;
+}
+.order-email-product th:first-child > th {
+	border-bottom: 0px dashed #000000 !important;
+}
+.order-email-product th:last-child{
+	border-left:1px dashed #000000 !important;
+	border-top: 0px solid #000000 !important;
+	border-right: 0px solid #000000 !important;
+	border-bottom: 1px dashed #000000 !important;
+}
+.order-email-product thead tr th {
+	border: none !important;
+	border-left: 1px dashed #000000 !important;
+}
+.order-email-product thead tr th:first-child {
+	border-right: 0px solid #000000 !important;
+}
+.order-email-product tbody tr td:first-child {
+	border-bottom: 1px dashed #000000 !important;
+}
+.order-email-product tbody tr td {
+	border-bottom: 1px dashed #000000 !important;
+	border-top: 1px dashed #000000 !important;
+}
+.order-email-product tbody tr td > td {
+	border-top: 0px dashed #000000 !important;
+	border-bottom: 0px dashed #000000 !important;
+}
+address {
+	border: 1px solid #636363 !important;
+	color: #333 !important;
+}
+.table-order-bottom-email {
+	margin-bottom: 10px;
+}
+.im {
+	color: #333;
+}
+p {
+	margin-bottom: 5px !important;
+	margin-top: -15px !important;
+}
+
 <?php
