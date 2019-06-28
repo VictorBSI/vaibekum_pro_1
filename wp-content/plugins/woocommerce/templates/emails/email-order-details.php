@@ -37,13 +37,13 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 	?>
 </h2>
 
-<div style="margin-bottom: 40px;">
-	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" border="1">
+<div class="table-order-bottom-email">
+	<table class="td order-email-product" cellspacing="0" cellpadding="6" style="width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;" border="1">
 		<thead>
 			<tr>
 				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+				<th class="td" scope="col" style="text-align:<?php echo esc_attr( $text_align = 'right' ); ?>;"><?php esc_html_e( 'Giá chưa VAT', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -67,8 +67,8 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 					$i++;
 					?>
 					<tr>
-						<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['label'] ); ?></th>
-						<td class="td" style="text-align:<?php echo esc_attr( $text_align ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['value'] ); ?></td>
+						<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align = 'left' ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['label'] ); ?></th>
+						<td class="td" style="text-align:<?php echo esc_attr( $text_align = 'right' ); ?>; <?php echo ( 1 === $i ) ? 'border-top-width: 4px;' : ''; ?>"><?php echo wp_kses_post( $total['value'] ); ?></td>
 					</tr>
 					<?php
 				}
@@ -76,8 +76,16 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 			if ( $order->get_customer_note() ) {
 				?>
 				<tr>
-					<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
-					<td class="td" style="text-align:<?php echo esc_attr( $text_align ); ?>;"><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></td>
+					<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align = 'left' ); ?>;"><?php esc_html_e( 'Note: ', 'woocommerce' ); ?><?php echo wp_kses_post( wptexturize( $order->get_customer_note() ) ); ?></th>
+					<td class="td"></td>
+				</tr>
+				<tr>
+					<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align = 'left' ); ?>;"><?php esc_html_e( 'Note: ', 'woocommerce' ); ?></th>
+					<td class="td"></td>
+				</tr>
+				<tr>
+					<th class="td" scope="row" colspan="2" style="text-align:<?php echo esc_attr( $text_align = 'left' ); ?>;"><?php esc_html_e( 'Note: ', 'woocommerce' ); ?></th>
+					<td class="td"></td>
 				</tr>
 				<?php
 			}
