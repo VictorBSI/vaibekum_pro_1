@@ -670,3 +670,9 @@ function custom_woocommerce_get_order_item_totals( $totals ) {
     unset( $totals['payment_method'] );
     return $totals;
 }
+
+/* CUSTOMMER STATES DEFAULT */
+add_filter( 'default_checkout_state', 'change_default_checkout_state' );
+function change_default_checkout_state() {
+    return 'Hồ Chí Minh';
+}

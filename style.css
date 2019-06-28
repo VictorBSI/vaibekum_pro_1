@@ -1,0 +1,225 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+@media only screen and (max-width: 48em) {
+    /*************** ADD MOBILE ONLY CSS HERE  ***************/
+}
+.container {
+    width: 1170px;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-mega-icon {
+    background-image: url(../flatsome-child/images/menu-cate-icon.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 5px;
+}
+#mega_menu > li > a > img {
+    max-width: initial;
+    width: auto !important;
+}
+#mega_menu > li:hover > a {
+    background: none;
+}
+#mega_menu > li > .menu-image {
+    left: 0px;
+    text-align: left;
+    background: none;
+}
+#mega_menu > li + li{
+    border-top: 1px dashed #ebebeb;
+}
+/* VẢI MAY ÁO DÀI */
+.content-title-vaibekum .section-head {
+    border-top: 3px solid #f30000;
+    position: relative;
+    margin-bottom: 20px;
+}
+.content-title-vaibekum .section-head .group-icon {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    background: #231f20;
+    padding: 10px;
+    display: inline-block;
+    color: #fff;
+    width: 39px;
+    height: 42px;
+    text-align: center;
+    line-height: 19px;
+    z-index: 1;
+}
+.content-title-vaibekum .section-head h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f30000;
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 45px;
+    height: 39px;
+    line-height: 39px;
+    position: relative;
+    font-weight: 500;
+    width: 15%!important;
+}
+.content-title-vaibekum .section-head h2:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 39px 39px 0 0;
+    border-color: #f30000 transparent transparent;
+    position: absolute;
+    right: -39px;
+    top: 0;
+}
+.read-more {
+    color: #f30000;
+    display: inline-block;
+    margin: 0;
+    line-height: 45px;
+    margin-left: 100px;
+    float: right;
+}
+.read-more a {
+    color: #f30000;
+}
+
+/* SẢN PHẨM BÁN CHẠY */
+.header-bottom {
+    background-color: #f1f1f1 !important;
+}
+.selling-products {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+/*MENU*/
+.home #mega-menu-wrap {
+    width: 51%;
+}
+#mega_menu > li:hover > ul.sub-menu {
+    width: 100%;
+    display: inline-table;
+    margin-top: -43px !important;
+    width: 790px;
+}
+#mega_menu > li > ul.sub-menu {
+    min-height: 173px !important;
+}
+#mega_menu ul.sub-menu > li {
+    display: inline-block;
+}
+/* NÚT XÓA SẢN PHẨM */
+.woocommerce a.remove{width:30px;height:22px;position:relative;transition:opacity 200ms;vertical-align:top;display:block;-webkit-appearance:none;background:none;border:none;cursor:pointer;outline:none;padding:0;text-indent:-9999px}
+.woocommerce a.remove:before,.woocommerce a.remove:after{background:url(../flatsome-child/images/icon-remove-product.png) 0 0 no-repeat;left:8px;position:absolute;right:8px;top:2px;display:inline-block;content:''}
+.woocommerce a.remove:before{height:6px;transform-origin:-7% 100%;-moz-transform-origin:-7% 100%;-webkit-transform-origin:-7% 100%;transition:transform 150ms;-moz-transition:transform 150ms;-webkit-transition:transform 150ms;width:14px}
+.woocommerce a.remove:after{background-position:-1px -4px;height:12px;margin-left:1px;margin-right:2px;margin-top:4px;width:11px}
+.woocommerce a.remove:hover:before{transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transition:transform 250ms;-moz-transition:transform 250ms;-webkit-transition:transform 250ms}
+.woocommerce a.remove:hover{background:transparent}
+/* NÚT XÓA SẢN PHẨM TRANG CHỦ */
+.home a.remove{width:30px;height:22px;position:relative;transition:opacity 200ms;vertical-align:top;display:block;-webkit-appearance:none;background:none;border:none;cursor:pointer;outline:none;padding:0;text-indent:-9999px}
+.home a.remove:before,.home a.remove:after{background:url(../flatsome-child/images/icon-remove-product.png) 0 0 no-repeat;left:8px;position:absolute;right:8px;top:2px;display:inline-block;content:''}
+.home a.remove:before{height:6px;transform-origin:-7% 100%;-moz-transform-origin:-7% 100%;-webkit-transform-origin:-7% 100%;transition:transform 150ms;-moz-transition:transform 150ms;-webkit-transition:transform 150ms;width:14px}
+.home a.remove:after{background-position:-1px -4px;height:12px;margin-left:1px;margin-right:2px;margin-top:4px;width:11px}
+.home a.remove:hover:before{transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transition:transform 250ms;-moz-transition:transform 250ms;-webkit-transition:transform 250ms}
+.home a.remove:hover{background:transparent}
+
+/* CSS SỐ TIỀN */
+.price-wrapper span.amount , span.amount{
+    color: #f30000;
+}
+
+/* TIN TỨC */
+.mi-cate-name{margin-bottom:0}
+.mi-news-boxs{padding:20px;background:#fff}
+.mi-news-it{border-bottom:1px solid #e3e3e3;padding-bottom:20px;margin-bottom:20px}
+.mi-news-images{float:left;width:300px;height:140px}
+.mi-news-images img{display:block;width:100%;height:100%}
+.mi-news-if{margin-left:330px}
+.mi-news-if h3{margin-bottom:5px}
+.mi-news-ct{color:#337ab7;display:inline-block;margin-bottom:0}
+.mi-news-tit{display:block;font-size:22px;font-weight:bold;line-height:1.18;color:#3d3d3d;margin-bottom:0}
+.mi-news-txt{font-size:15px;line-height:1.57;color:#555;margin-bottom:0;text-align:justify}
+.mi-news-bot{color:#9b9b9b}
+.mi-news-bot span{display:inline-block;vertical-align:middle;margin-right:5px}
+.mi-news-user img{width:30px;height:30px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%}
+.mi-news-bot span{display:inline-block;vertical-align:middle;margin-right:5px;color:#333;font-size:15px}
+.news-view-more{border:1px solid #f89406;border-radius:0;font-size:12px;font-weight:normal;text-transform:uppercase;top:0;left:0;margin:0;margin-bottom:10px}
+.news-view-more:hover{background:#f89406}
+.news-view-more a{color:#f89406}
+.news-view-more a:hover{color:#fff}
+.mi-right-view-more{float:right}
+.page-id-545 #main{background-color:#f3f3f3}
+.container-fluid .row-fluid .page-center{padding-top:0;padding-bottom:0}
+.page-id-545 .page-wrapper{margin-bottom:0;padding-bottom:0}
+.page-id-545 .page-wrapper .col{padding-left:5px}
+/* CHI TIẾT TIN TỨC V2 */
+.single-post .blog-single .article-inner .entry-header .entry-header-text{padding:0}
+.single-post .blog-single .article-inner .entry-header .entry-header-text .entry-title{font-size:25px}
+.single-post .blog-single .article-inner .single-page{padding-top:0;padding-bottom:0}
+.single-post .blog-single .article-inner .single-page .wp-caption{margin-bottom:10px}
+.single-post .blog-single .article-inner .single-page figure,.single-post .blog-single .article-inner .single-page figcaption{background:none}
+.entry-categor a{color:#333}
+.title-name-tags{color:#333}
+.title-name-tags a:before{content:"|"}
+.title-name-tags a:first-child:before{content:''}
+.mi-related-cat{margin-top:10px}
+.mi-title-related{font-size:15px;font-weight:bold;color:#d0011b;text-transform:none}
+.mi-related-cat ul li a:before{content:'\f101';display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;font-variant:normal;font-stretch:normal;font-kerning:auto;font-feature-settings:normal;line-height:1;-webkit-font-smoothing:antialiased;text-align:center;font-size:12px;margin-right:5px}
+.blog-single h2{text-transform:none}
+.single-post .blog-single td{color:#333;text-align:center}
+.single-post .blog-single table{border:1px solid #333;width:100%!important}
+.single-post .blog-single table td{border:1px solid #333}
+.blog-single .mi-related-cat .mi-title-related {font-size: 20px;}
+/* PHÂN TRANG TIN TỨC */
+.paginate_links{overflow:hidden;text-align:center;display:table;margin:10px auto}
+.paginate_links .page-numbers{width:25px;height:25px;display:inline-block;float:left;margin:0 3px;padding-top:2px;border-radius:0!important;border:1px solid #0096d6;font-size:12px;font-weight:100}
+.paginate_links .page-numbers:hover{background:#1087ec;color:#fff}
+.paginate_links .page-numbers.prev,.paginate_links .page-numbers.next{width:25px;height:25px;display:inline-block;float:left;margin:0 3px;padding-top:2px;border-radius:0!important;border:1px solid #0096d6;font-size:12px;font-weight:100;color:#ec1e1f}
+.paginate_links .page-numbers.prev:hover,.paginate_links .page-numbers.next:hover{text-decoration:none;color:#ec1e1f}
+.paginate_links .page-numbers.current{background:#1087ec;color:#fff}
+/* TAG */
+.tag .blog-archive .col-inner{box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.22)}
+.tag .blog-archive .col-inner .badge-outline .badge-inner{color:#333}
+.badge-inner{background:#fff}
+.badge.post-date{display:none}
+.tag .row{max-width:1170px}
+.tag .blog-archive .large-10{max-width:100%;flex-basis:100%;padding:10px}
+.tag .mi-news-images{padding-bottom:20px}
+.tag .mi-news-boxs{padding:0}
+.tag .page-wrapper{padding-top:0;padding-bottom:0}
+
+/* CATEGORY */
+.category .large-10 {
+    max-width: 100%;
+    flex-basis: 100%;
+    padding: 10px;
+}
+
+/* THÔNG BÁO SẢN PHẨM HẾT HÀNG */
+.woocommerce-notices-wrapper {
+    margin-top: 10px;
+}
+/* CHI TIẾT SẢN PHẨM */
+.single-product .product-main {
+    padding: 0px;
+}
+
+/* HẾT HÀNG */
+.box-image .out-of-stock-label {
+    color: #E10000;
+    padding: 0px;
+}
