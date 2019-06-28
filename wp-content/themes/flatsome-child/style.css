@@ -275,6 +275,11 @@ Version: 3.0
     color: #f30000;
 }
 
+/* PHẦN TRĂM TÍNH TIỀN */
+.badge-circle {
+    margin-left: 10px;
+}
+
 /* TIN TỨC */
 .mi-cate-name{margin-bottom:0}
 .mi-news-boxs{padding:20px;background:#fff}
@@ -357,6 +362,20 @@ Version: 3.0
     padding: 0px;
 }
 
+/* CART & CHECKOUT */
+
+.woocommerce-cart .page-title-inner, .woocommerce-checkout .page-title-inner{
+  padding-top: 0px;
+}
+.woocommerce-cart .page-wrapper, .woocommerce-checkout .page-wrapper{
+  padding-top: 0px;
+}
+.woocommerce-cart-form tr th {
+  font-size: 13px;
+}
+.woocommerce-checkout .page-checkout {
+  padding-bottom: 0px;
+}
 /* MOBILE */
 
 @media (max-width:767px){
