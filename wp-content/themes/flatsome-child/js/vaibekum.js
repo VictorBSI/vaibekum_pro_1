@@ -12,3 +12,49 @@ jQuery(document).ready(function($) {
 		}
 	});
 })
+
+/* MOBILE */
+$(document).ready(function() {
+    if ($(window).width() < 768) {
+        var showMobile = true
+        $('#mega_menu li > .toggle').on('click', function(e) {
+            if (showMobile == true) {
+                $('.sub-menu').addClass('show-mobile');
+                showMobile = false;
+            } else {
+                $('.sub-menu').removeClass('show-mobile');
+                showMobile = true;
+            }
+        });
+    }
+});
+
+$(document).ready(function() {
+    if ($(window).width() < 320) {
+        var showMobile = true
+        $('#mega_menu li > .toggle').on('click', function(e) {
+            if (showMobile == true) {
+                $('.sub-menu').addClass('show-mobile');
+                showMobile = false;
+            } else {
+                $('.sub-menu').removeClass('show-mobile');
+                showMobile = true;
+            }
+        });
+    }
+});
+
+$(document).ready(function() {
+    if ($(window).width() < 1024) {
+        var showMobile = true
+        $('#mega_menu li > .toggle').on('click', function(e) {
+            if (showMobile == true) {
+                $('.sub-menu').addClass('show-mobile');
+                showMobile = false;
+            } else {
+                $('.sub-menu').removeClass('show-mobile');
+                showMobile = true;
+            }
+        }
+		}
+});
