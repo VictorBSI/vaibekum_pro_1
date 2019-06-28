@@ -12,7 +12,6 @@ Version: 3.0
 @media only screen and (max-width: 48em) {
     /*************** ADD MOBILE ONLY CSS HERE  ***************/
 }
-
 .menu-mega-icon {
     background-image: url(../flatsome-child/images/menu-cate-icon.png);
     background-repeat: no-repeat;
@@ -104,9 +103,8 @@ Version: 3.0
 }
 
 /*MENU*/
-
-.home #mega-menu-wrap {
-    width: 51%;
+#wrapper .header .header-wrapper .flex-has-center>.flex-row>.flex-col:not(.flex-center) {
+    flex: inherit !important;
 }
 #mega_menu>li:hover>ul.sub-menu {
     width: 100%;
@@ -123,6 +121,11 @@ Version: 3.0
 .selling-products {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+}
+
+/* BREADCRUMBS */
+.flex-center {
+    margin: 0px;
 }
 
 
