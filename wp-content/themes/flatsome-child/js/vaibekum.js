@@ -34,27 +34,43 @@ jQuery(document).ready(function($) {
     });
     $('button.owl-prev').addClass('flickity-button flickity-prev-next-button previous');
     $('button.owl-next').addClass('flickity-button flickity-prev-next-button next');
-    if ($(window).width() <= 849) {
-        $('.nav-icon.has-icon').click(function() {
-            console.log('da click');
-            if (!$('#mega_menu>li.has-child>a').has('i').length) {
-                $('#mega_menu>li.has-child>a').append('<i class="fas fa-angle-right"></i>');
-            }
-            var display = false;
-            $('#mega_menu>li.has-child>a>i').click(function() {
+    $('#mega_menu li.has-child>a').append('<i class="fas fa-angle-right"></i>');
+    // $('.menu li.has-child').on('click', function(e) {
+    //     e.preventDefault();
+    //     console.log('da lcik');
+    // });
 
-                if (display) {
-                    $('#mega_menu>li.has-child>ul.sub-menu').style.display = "block!important";
-                    display = true;
-                } else {
-                    $('#mega_menu>li.has-child>ul.sub-menu').style.display = "none!important";
-                }
+    // if ($(window).width() <= 849) {
+    //     $('.nav-icon.has-icon').click(function() {
+    //         setTimeout(function() {
+    //             if (!$('#mega_menu>li.has-child>a').has('i').length) {
+    //                 $('#mega_menu>li.has-child>a').append('<i class="fas fa-angle-right"></i>');
+    //             }
+    //             var display = false;
+    //             $('#mega_menu>li.has-child>a>i').click(function() {
 
-            });
-        });
-    } else {
-        $('#mega_menu>li.has-child>a').append('<i class="fas fa-angle-right"></i>');
-    }
+    //                 if (display) {
+    //                     $('#mega_menu>li.has-child>ul.sub-menu').style.display = "block!important";
+    //                     display = true;
+    //                 } else {
+    //                     $('#mega_menu>li.has-child>ul.sub-menu').style.display = "none!important";
+    //                 }
+
+    //             });
+    //         }, 400);
+
+    //     });
+    // }
+
+    $('.menu li').click(function(e) {
+
+        e.preventDefault();
+
+        if ($(this).hasClass('has-child')) {
+            $(this).find('ul').toggle();
+            return false;
+        }
+    });
     $('.wrap_add_cart a.ajax_add_to_cart').click(function() {
         $(document.body).on('added_to_cart', function() {
             $('.wrap_add_cart>a.added_to_cart').html('<i class="far fa-eye"></i>');
@@ -79,6 +95,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+
     if ($(window).width() < 320) {
         var showMobile = true
         $('#mega_menu li > .toggle').on('click', function(e) {
@@ -94,9 +111,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    if ($(window).width() <= 849) {
 
-    }
     if ($(window).width() < 1024) {
         var showMobile = true
         $('#mega_menu li > .toggle').on('click', function(e) {
