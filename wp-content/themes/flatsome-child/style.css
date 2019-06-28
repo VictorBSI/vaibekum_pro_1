@@ -103,6 +103,9 @@ Version: 3.0
     float: right;
 }
 
+.read-more a {
+    color: #f30000;
+}
 
 /*MENU*/
 
