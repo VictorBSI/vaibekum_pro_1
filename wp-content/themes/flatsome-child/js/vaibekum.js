@@ -34,13 +34,25 @@ jQuery(document).ready(function($) {
     });
     $('button.owl-prev').addClass('flickity-button flickity-prev-next-button previous');
     $('button.owl-next').addClass('flickity-button flickity-prev-next-button next');
-    $('#mega_menu li.has-child>a').append('<i class="fas fa-angle-right"></i>');
-    // $('.menu li.has-child').on('click', function(e) {
-    //     e.preventDefault();
-    //     console.log('da lcik');
-    // });
+    $('.menu li.menu-item-has-children>a').append('<i class="fas fa-angle-right"></i>');
 
-    // if ($(window).width() <= 849) {
+
+    if ($(window).width() <= 849) {
+        $('.menu li').click(function(e) {
+
+            if ($(this).hasClass('has-child')) {
+                e.preventDefault();
+                $(this).find('ul').toggle();
+                return false;
+            }
+        });
+
+    }
+    $('.wrap_add_cart a.ajax_add_to_cart').click(function() {
+        $(document.body).on('added_to_cart', function() {
+            $('.wrap_add_cart>a.added_to_cart').html('<i class="far fa-eye"></i>');
+        })
+    });
     //     $('.nav-icon.has-icon').click(function() {
     //         setTimeout(function() {
     //             if (!$('#mega_menu>li.has-child>a').has('i').length) {
@@ -62,20 +74,7 @@ jQuery(document).ready(function($) {
     //     });
     // }
 
-    $('.menu li').click(function(e) {
 
-        e.preventDefault();
-
-        if ($(this).hasClass('has-child')) {
-            $(this).find('ul').toggle();
-            return false;
-        }
-    });
-    $('.wrap_add_cart a.ajax_add_to_cart').click(function() {
-        $(document.body).on('added_to_cart', function() {
-            $('.wrap_add_cart>a.added_to_cart').html('<i class="far fa-eye"></i>');
-        })
-    });
 })
 
 /* MOBILE */
