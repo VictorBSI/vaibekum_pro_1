@@ -108,6 +108,18 @@ h6,
   font-weight: bold;
 }
 
+.badge-container {
+  margin: 20px 0 0 20px !important;
+}
+
+.related.related-products-wrapper.product-section .col-inner > .badge-container {
+  margin: 20px 0 0 20px !important;
+}
+
+.col-inner > .badge-container {
+  margin: 20px 0 0 0px !important;
+}
+
 .col-inner > .product-small:hover .box-hover {
   opacity: 1;
 }
@@ -451,12 +463,24 @@ span.ui-slider-handle {
 
 /* custome nav menu */
 
+.breadcrumbs.heading-font.checkout-breadcrumbs.text-center.h2.strong {
+  font-size: 18px;
+}
+
+.breadcrumbs.heading-font.checkout-breadcrumbs.text-center.h2.strong span {
+  margin: 0 -3.1px;
+}
+
 /** mega menu */
 
 #wide-nav > .flex-row > .flex-left {
   width: 25%;
   min-width: 245px;
   margin-right: 15px;
+}
+
+button[name=update_cart] {
+  opacity: 1 !important;
 }
 
 #mega-menu-wrap {
