@@ -361,6 +361,12 @@ Version: 3.0
 .woocommerce-checkout .page-checkout {
   padding-bottom: 0px;
 }
+
+/* SIDEBAR */
+#product-sidebar .widget_recently_viewed_products span.widget-title.shop-sidebar, #product-sidebar .support-content span.widget-title.shop-sidebar, .product-sidebar-follow span.widget-title.shop-sidebar.sale_product {
+    background: #f30000;
+}
+
 /* MOBILE */
 
 @media (max-width:767px){
