@@ -517,13 +517,12 @@ body.home #mega_menu {
     font-size: 14px
 }
 
-#mega_menu>li.menu-item-has-children>a:after {
-    content: "\F105";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 600;
-    float: right;
-}
-
+// #mega_menu>li.menu-item-has-children>a:after {
+//     content: "\F105";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 600;
+//     float: right;
+// }
 #mega_menu>li>a {
     position: relative;
     padding-left: 40px
@@ -789,4 +788,20 @@ body.home #mega_menu {
         color: $main_color;
         background-color: #fff;
     }
+}
+
+#mega_menu>li.has-child>a>i {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    display: inline-table;
+}
+
+
+/* REMOVE MŨI TÊN ADD CART */
+
+a.added_to_cart:after {
+    content: none!important;
 }

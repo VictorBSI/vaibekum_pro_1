@@ -1,5 +1,8 @@
+// import { isFulfilled } from "q";
+
 /* HỖ TRỢ ONLINE */
 jQuery(document).ready(function($) {
+
     var hover = true;
     $(".vbk-support").hover(function() {
         if (hover === true) {
@@ -31,6 +34,32 @@ jQuery(document).ready(function($) {
     });
     $('button.owl-prev').addClass('flickity-button flickity-prev-next-button previous');
     $('button.owl-next').addClass('flickity-button flickity-prev-next-button next');
+    if ($(window).width() <= 849) {
+        $('.nav-icon.has-icon').click(function() {
+            console.log('da click');
+            if (!$('#mega_menu>li.has-child>a').has('i').length) {
+                $('#mega_menu>li.has-child>a').append('<i class="fas fa-angle-right"></i>');
+            }
+            var display = false;
+            $('#mega_menu>li.has-child>a>i').click(function() {
+
+                if (display) {
+                    $('#mega_menu>li.has-child>ul.sub-menu').style.display = "block!important";
+                    display = true;
+                } else {
+                    $('#mega_menu>li.has-child>ul.sub-menu').style.display = "none!important";
+                }
+
+            });
+        });
+    } else {
+        $('#mega_menu>li.has-child>a').append('<i class="fas fa-angle-right"></i>');
+    }
+    $('.wrap_add_cart a.ajax_add_to_cart').click(function() {
+        $(document.body).on('added_to_cart', function() {
+            $('.wrap_add_cart>a.added_to_cart').html('<i class="far fa-eye"></i>');
+        })
+    });
 })
 
 /* MOBILE */
@@ -80,6 +109,14 @@ $(document).ready(function() {
             }
         })
     }
+    // document.getElementsByClassName('ajax_add_to_cart').on('click', function() {
+    //     console.log($(this).nextElementSibling);
+    // });
+    // $('.wrap_add_cart>a.ajax_add_to_cart').click(function(event) {
+    //     event.preventDefault();
+    //     console.log(event.currentTarget.next());
+    // });
+
 });
 
 var hover = true;

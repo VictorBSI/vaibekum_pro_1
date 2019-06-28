@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 function setup_script_theme()
 {
-    wp_enqueue_style('app-js', get_stylesheet_directory_uri() . '/assets/js/main.js' , array(), NULL);
+    wp_enqueue_style('app-js', get_stylesheet_directory_uri() . '/assets/js/main.js' , array('jquery'), NULL);
     wp_enqueue_style('app-css',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), NULL);
     wp_enqueue_style('owl-carousel-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', array(), NULL);
@@ -676,3 +676,4 @@ add_filter( 'default_checkout_state', 'change_default_checkout_state' );
 function change_default_checkout_state() {
     return 'Hồ Chí Minh';
 }
+

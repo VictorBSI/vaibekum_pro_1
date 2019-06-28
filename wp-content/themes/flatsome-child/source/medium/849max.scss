@@ -14,3 +14,19 @@
 #mega_menu.menu>li:hover>ul.sub-menu {
     margin-top: 0px!important;
 }
+
+#mega_menu>li>.menu-image>img {
+    top: 9px!important;
+    margin: 0!important;
+}
+
+
+/* FIX FORM SREARCH */
+
+.flex-col.show-for-medium.flex-grow {
+    width: 100%;
+}
+
+ul#mega_menu>li:hover>ul.sub-menu {
+    display: none;
+}
