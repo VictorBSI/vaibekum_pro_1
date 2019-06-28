@@ -15,8 +15,8 @@ add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 function setup_script_theme()
 {
-    wp_enqueue_style('app', get_stylesheet_directory_uri() . '/assets/js/main.js' , array(), NULL);
-    wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('app-js', get_stylesheet_directory_uri() . '/assets/js/main.js' , array(), NULL);
+    wp_enqueue_style('app-css',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), NULL);
     wp_enqueue_style('owl-carousel-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', array(), NULL);
     wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array(), NULL);
@@ -299,6 +299,9 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
         case 'Out of stock' :
             $translated_text = __('Hết hàng', 'woocommerce');
             break;
+        // case 'Direct bank transfer' :
+        //     $translated_text = __('Chuyển ngân hàng', 'woocommerce');
+        //     break;
     }
     return $translated_text;
 }
