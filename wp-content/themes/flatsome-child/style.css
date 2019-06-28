@@ -13,10 +13,6 @@ Version: 3.0
     /*************** ADD MOBILE ONLY CSS HERE  ***************/
 }
 
-.container {
-    width: 1170px;
-}
-
 .menu-mega-icon {
     background-image: url(../flatsome-child/images/menu-cate-icon.png);
     background-repeat: no-repeat;
@@ -112,25 +108,11 @@ Version: 3.0
 .home #mega-menu-wrap {
     width: 51%;
 }
-
-
-/* #mega_menu > li > .menu-image img{
-    display: block;
-} */
-
 #mega_menu>li:hover>ul.sub-menu {
     width: 100%;
     display: inline-table;
+    margin-top: -43px !important;
 }
-
-
-/* #mega_menu > li:hover > ul.sub-menu li {
-    background: #fff;
-    text-align: center;
-    white-space: nowrap;
-    display: table-cell;
-} */
-
 
 /* SẢN PHẨM BÁN CHẠY */
 
@@ -322,6 +304,7 @@ Version: 3.0
 .single-post .blog-single table{border:1px solid #333;width:100%!important}
 .single-post .blog-single table td{border:1px solid #333}
 .blog-single .mi-related-cat .mi-title-related {font-size: 20px;}
+.mi-related-cat ul {list-style: none;}
 /* PHÂN TRANG TIN TỨC */
 .paginate_links{overflow:hidden;text-align:center;display:table;margin:10px auto}
 .paginate_links .page-numbers{width:25px;height:25px;display:inline-block;float:left;margin:0 3px;padding-top:2px;border-radius:0!important;border:1px solid #0096d6;font-size:12px;font-weight:100}
@@ -334,7 +317,6 @@ Version: 3.0
 .tag .blog-archive .col-inner .badge-outline .badge-inner{color:#333}
 .badge-inner{background:#fff}
 .badge.post-date{display:none}
-.tag .row{max-width:1170px}
 .tag .blog-archive .large-10{max-width:100%;flex-basis:100%;padding:10px}
 .tag .mi-news-images{padding-bottom:20px}
 .tag .mi-news-boxs{padding:0}
@@ -426,9 +408,59 @@ Version: 3.0
         padding-bottom: 0px;
     }
     .related-products-wrapper .content-title-vaibekum {
-        padding-bottom: 30px;
+        padding-bottom: 20px !important;
     }
     .single-product .content-row .large-9 {
+        padding-bottom: 0px;
+    }
+    .mi-news-if {
+        margin-left: 0px;
+    }
+    .mi-news-boxs {
+        padding: 0px;
+    }
+    .content-wrapper h1 {
+        font-size: 17px;
+    }
+    .mi-news-images {
+        width: auto;
+    }
+    .single-post .large-10 {
+        padding-bottom: 0px;
+    }
+    .single-post .page-wrapper {
+        padding-bottom: 0px;
+    }
+    .posted_in {
+        font-size: 14px;
+    }
+    .single-product .product-summary {
+        padding-bottom: 0px;
+    }
+    .product-footer .woocommerce-tabs {
+        border-top: 0px;
+        padding: 0px;
+    }
+    .selling-products .slider-nav-reveal .flickity-prev-next-button.previous {
+        left: 10px !important;
+    }
+    .selling-products .slider-nav-reveal .flickity-prev-next-button.next {
+        right: 10px !important;
+    }
+    .woocommerce-notices-wrapper {
+        margin-top: 0px;
+    }
+    .medium-flex-wrap .flex-col {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .woocommerce-cart .page-wrapper {
+        padding-bottom: 0px;
+    }
+    .woocommerce-cart .woocommerce-cart-form, .woocommerce-checkout .checkout  {
+        margin-bottom: 0px;
+    }
+    .woocommerce-checkout .large-7 {
         padding-bottom: 0px;
     }
 }
