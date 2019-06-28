@@ -299,9 +299,6 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
         case 'Out of stock' :
             $translated_text = __('Hết hàng', 'woocommerce');
             break;
-        // case 'Direct bank transfer' :
-        //     $translated_text = __('Chuyển ngân hàng', 'woocommerce');
-        //     break;
     }
     return $translated_text;
 }
