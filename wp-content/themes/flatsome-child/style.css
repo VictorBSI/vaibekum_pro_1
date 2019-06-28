@@ -419,4 +419,16 @@ Version: 3.0
     .acf-map {
         margin: 10px 0;
     }
+    .woocommerce-checkout .page-title-inner {
+        padding-top: 0px;
+    }
+    .woocommerce-checkout .page-checkout {
+        padding-bottom: 0px;
+    }
+    .related-products-wrapper .content-title-vaibekum {
+        padding-bottom: 30px;
+    }
+    .single-product .content-row .large-9 {
+        padding-bottom: 0px;
+    }
 }
