@@ -340,3 +340,333 @@ add_action( 'phpmailer_init', function( $phpmailer ) {
     $phpmailer->From       = ''.$userName.'';
     $phpmailer->FromName   = ''.$contentText.'';
 });
+
+/* PHÂN TRANG */
+function wp_corenavi_table($custom_query = null) {
+    global $wp_query;
+    if($custom_query) $main_query = $custom_query;
+    else $main_query = $wp_query;
+    $big = 999999999;
+    $total = isset($main_query->max_num_pages)?$main_query->max_num_pages:'';
+    if($total > 1) echo '<div class="paginate_links">';
+    echo paginate_links( array(
+       'base'        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+       'format'   => '?paged=%#%',
+       'current'  => max( 1, get_query_var('paged') ),
+       'total'    => $total,
+       'mid_size' => '10',
+       'prev_text'    => __('<','mi'),
+       'next_text'    => __('>','mi'),
+    ) );
+    if($total > 1) echo '</div>';
+}
+
+function content($limit) {
+    $content = explode(' ', get_the_content(), $limit);
+    if (count($content)>=$limit) {
+        array_pop($content);
+        $content = implode(" ",$content).'...';
+    } else {
+        $content = implode(" ",$content);
+    }
+    $content = preg_replace('/[.+]/','', $content);
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]&gt;', $content);
+    $content = strip_shortcodes($content);
+    $content = strip_tags($content);
+    $content = substr($content, 0, $limit);
+    $content = substr($content, 0, strripos($content, " "));
+    $content = trim(preg_replace( '/\s+/', ' ', $content));
+    $content = $content.' ...';
+    return $content;
+}
+
+/********* THAY ĐỔI FORM THÔNG TIN GIAO HÀNG ***********/
+add_filter( 'woocommerce_checkout_fields' , 'custom_checkout_form' );
+function custom_checkout_form( $fields ) {
+    unset($fields['billing']['billing_postcode']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_last_name']);
+    unset($fields['billing']['billing_city']);
+
+    $fields['billing']['billing_first_name'] = array(
+    'label' => 'Họ Tên',
+    'placeholder' => 'Ví dụ: Nguyễn Trung Trực',
+    'required'  => true,
+    );
+
+    $fields['billing']['billing_phone'] = array(
+    'label' => 'Số điện thoại',
+    'placeholder' => 'Ví dụ: 0988286818',
+    'required'  => true,
+    );
+
+    $fields['billing']['billing_email'] = array(
+    'label' => 'Email',
+    'placeholder' => 'Ví dụ: mucinlaser@gmail.com',
+    'required'  => true,
+    );
+
+    $fields['billing']['billing_address_1'] = array(
+    'label' => 'Địa chỉ giao hàng',
+    'placeholder' => 'Ví dụ: Số 18 Ngõ 86 Phú Kiều, Bắc Từ Liêm, Hà Nội',
+    'required'  => false,
+    );
+
+    $fields['order']['order_comments'] = array(
+    'label' => 'Ghi chú',
+    'placeholder' => 'Ví dụ: giao hàng trước 17h',
+    'required'  => false,
+    );
+
+    return $fields;
+}
+
+/********* THÊM CÁC TỈNH THÀNH PHỐ WOOCOMMERCE ***********/
+add_filter( 'woocommerce_states', 'vietnam_cities_woocommerce' );
+function vietnam_cities_woocommerce( $states ) {
+  $states['VN'] = array(
+    'Cần Thơ' => __('Cần Thơ', 'woocommerce') ,
+    'Hồ Chí Minh' => __('Hồ Chí Minh', 'woocommerce') ,
+    'Hà Nội' => __('Hà Nội', 'woocommerce') ,
+    'Hải Phòng' => __('Hải Phòng', 'woocommerce') ,
+    'Đà Nẵng' => __('Đà Nẵng', 'woocommerce') ,
+    'An Giang' => __('An Giang', 'woocommerce') ,
+    'Bà Rịa - Vũng Tàu' => __('Bà Rịa - Vũng Tàu', 'woocommerce') ,
+    'Bạc Liêu' => __('Bạc Liêu', 'woocommerce') ,
+    'Bắc Kạn' => __('Bắc Kạn', 'woocommerce') ,
+    'Bắc Ninh' => __('Bắc Ninh', 'woocommerce') ,
+    'Bắc Giang' => __('Bắc Giang', 'woocommerce') ,
+    'Bến Tre' => __('Bến Tre', 'woocommerce') ,
+    'Bình Dương' => __('Bình Dương', 'woocommerce') ,
+    'Bình Định' => __('Bình Định', 'woocommerce') ,
+    'Bình Phước' => __('Bình Phước', 'woocommerce') ,
+    'Bình Phước' => __('Bình Thuận', 'woocommerce'),
+    'Cà Mau' => __('Cà Mau', 'woocommerce'),
+    'Đak Lak' => __('Đak Lak', 'woocommerce'),
+    'Đak Nông' => __('Đak Nông', 'woocommerce'),
+    'Điện Biên' => __('Điện Biên', 'woocommerce'),
+    'Đồng Nai' => __('Đồng Nai', 'woocommerce'),
+    'Gia Lai' => __('Gia Lai', 'woocommerce'),
+    'Hà Giang' => __('Hà Giang', 'woocommerce'),
+    'Hà Nam' => __('Hà Nam', 'woocommerce'),
+    'Hà Tĩnh' => __('Hà Tĩnh', 'woocommerce'),
+    'Hải Dương' => __('Hải Dương', 'woocommerce'),
+    'Hậu Giang' => __('Hậu Giang', 'woocommerce'),
+    'Hòa Bình' => __('Hòa Bình', 'woocommerce'),
+    'Hưng Yên' => __('Hưng Yên', 'woocommerce'),
+    'Khánh Hòa' => __('Khánh Hòa', 'woocommerce'),
+    'Kiên Giang' => __('Kiên Giang', 'woocommerce'),
+    'Kom Tum' => __('Kom Tum', 'woocommerce'),
+    'Lai Châu' => __('Lai Châu', 'woocommerce'),
+    'Lâm Đồng' => __('Lâm Đồng', 'woocommerce'),
+    'Lạng Sơn' => __('Lạng Sơn', 'woocommerce'),
+    'Lào Cai' => __('Lào Cai', 'woocommerce'),
+    'Long An' => __('Long An', 'woocommerce'),
+    'Nam Định' => __('Nam Định', 'woocommerce'),
+    'Nghệ An' => __('Nghệ An', 'woocommerce'),
+    'Ninh Bình' => __('Ninh Bình', 'woocommerce'),
+    'Ninh Thuận' => __('Ninh Thuận', 'woocommerce'),
+    'Phú Thọ' => __('Phú Thọ', 'woocommerce'),
+    'Phú Yên' => __('Phú Yên', 'woocommerce'),
+    'Quảng Bình' => __('Quảng Bình', 'woocommerce'),
+    'Quảng Nam' => __('Quảng Nam', 'woocommerce'),
+    'Quảng Ngãi' => __('Quảng Ngãi', 'woocommerce'),
+    'Quảng Ninh' => __('Quảng Ninh', 'woocommerce'),
+    'Quảng Trị' => __('Quảng Trị', 'woocommerce'),
+    'Sóc Trăng' => __('Sóc Trăng', 'woocommerce'),
+    'Sơn La' => __('Sơn La', 'woocommerce'),
+    'Tây Ninh' => __('Tây Ninh', 'woocommerce'),
+    'Thái Bình' => __('Thái Bình', 'woocommerce'),
+    'Thái Nguyên' => __('Thái Nguyên', 'woocommerce'),
+    'Thanh Hóa' => __('Thanh Hóa', 'woocommerce'),
+    'Thừa Thiên - Huế' => __('Thừa Thiên - Huế', 'woocommerce'),
+    'Tiền Giang' => __('Tiền Giang', 'woocommerce'),
+    'Trà Vinh' => __('Trà Vinh', 'woocommerce'),
+    'Tuyên Quang' => __('Tuyên Quang', 'woocommerce'),
+    'Vĩnh Long' => __('Vĩnh Long', 'woocommerce'),
+    'Vĩnh Phúc' => __('Vĩnh Phúc', 'woocommerce'),
+    'Yên Bái' => __('Yên Bái', 'woocommerce'),
+  );
+
+  return $states;
+}
+function flatsome_vaibekum_custom_checkout_fields( $fields ) {
+
+    // Đổi tên Bang / Hạt thành Tỉnh / Thành Phố
+    $fields['state']['label'] = 'Tỉnh / Thành Phố';
+    return $fields;
+}
+add_filter( 'woocommerce_default_address_fields', 'flatsome_vaibekum_custom_checkout_fields' );
+
+/* REMOVE URL PRODUCT FIX LINKS */
+function devvn_remove_slug( $post_link, $post ) {
+    if ( !in_array( get_post_type($post), array( 'product' ) ) || 'publish' != $post->post_status ) {
+        return $post_link;
+    }
+    if('product' == $post->post_type){
+        $post_link = str_replace( '/product/', '/', $post_link );
+    }else{
+        $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+    }
+    return $post_link;
+}
+add_filter( 'post_type_link', 'devvn_remove_slug', 10, 2 );
+
+function devvn_woo_product_rewrite_rules($flash = false) {
+    global $wp_post_types, $wpdb;
+    $siteLink = esc_url(home_url('/'));
+    foreach ($wp_post_types as $type=>$custom_post) {
+        if($type == 'product'){
+            if ($custom_post->_builtin == false) {
+                $querystr = "SELECT {$wpdb->posts}.post_name, {$wpdb->posts}.ID
+                            FROM {$wpdb->posts}
+                            WHERE {$wpdb->posts}.post_status = 'publish'
+                            AND {$wpdb->posts}.post_type = '{$type}'";
+                $posts = $wpdb->get_results($querystr, OBJECT);
+                foreach ($posts as $post) {
+                    $current_slug = get_permalink($post->ID);
+                    $base_product = str_replace($siteLink,'',$current_slug);
+                    add_rewrite_rule($base_product.'?$', "index.php?{$custom_post->query_var}={$post->post_name}", 'top');
+                    add_rewrite_rule($base_product.'comment-page-([0-9]{1,})/?$', 'index.php?'.$custom_post->query_var.'='.$post->post_name.'&cpage=$matches[1]', 'top');
+                    add_rewrite_rule($base_product.'(?:feed/)?(feed|rdf|rss|rss2|atom)/?$', 'index.php?'.$custom_post->query_var.'='.$post->post_name.'&feed=$matches[1]','top');
+                }
+            }
+        }
+    }
+    if ($flash == true)
+        flush_rewrite_rules(false);
+}
+add_action('init', 'devvn_woo_product_rewrite_rules');
+/*Fix lỗi khi tạo sản phẩm mới bị 404*/
+function devvn_woo_new_product_post_save($post_id){
+    global $wp_post_types;
+    $post_type = get_post_type($post_id);
+    foreach ($wp_post_types as $type=>$custom_post) {
+        if ($custom_post->_builtin == false && $type == $post_type) {
+            devvn_woo_product_rewrite_rules(true);
+        }
+    }
+}
+add_action('wp_insert_post', 'devvn_woo_new_product_post_save');
+
+/*
+ * Link https://https://domain.net/xoa-bo-product-category-va-toan-bo-slug-cua-danh-muc-cha-khoi-duong-dan-cua-woocommerce/
+ * */
+// Remove product cat base product-category and all-slug
+add_filter('term_link', 'devvn_no_term_parents', 1000, 3);
+function devvn_no_term_parents($url, $term, $taxonomy) {
+    if($taxonomy == 'product_cat'){
+        $term_nicename = $term->slug;
+        $url = trailingslashit(get_option( 'home' )) . user_trailingslashit( $term_nicename, 'category' );
+    }
+    return $url;
+}
+
+// Add our custom product cat rewrite rules
+function devvn_no_product_cat_parents_rewrite_rules($flash = false) {
+    $terms = get_terms( array(
+        'taxonomy' => 'product_cat',
+        'post_type' => 'product',
+        'hide_empty' => false,
+    ));
+    if($terms && !is_wp_error($terms)){
+        foreach ($terms as $term){
+            $term_slug = $term->slug;
+            add_rewrite_rule($term_slug.'/?$', 'index.php?product_cat='.$term_slug,'top');
+            add_rewrite_rule($term_slug.'/page/([0-9]{1,})/?$', 'index.php?product_cat='.$term_slug.'&paged=$matches[1]','top');
+            add_rewrite_rule($term_slug.'/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$', 'index.php?product_cat='.$term_slug.'&feed=$matches[1]','top');
+        }
+    }
+    if ($flash == true)
+        flush_rewrite_rules(false);
+}
+add_action('init', 'devvn_no_product_cat_parents_rewrite_rules');
+
+/*Sửa lỗi khi tạo mới taxomony bị 404*/
+add_action( 'create_term', 'devvn_new_product_cat_edit_success', 10);
+add_action( 'edit_terms', 'devvn_new_product_cat_edit_success', 10);
+add_action( 'delete_term', 'devvn_new_product_cat_edit_success', 10);
+function devvn_new_product_cat_edit_success( ) {
+    devvn_no_product_cat_parents_rewrite_rules(true);
+}
+
+/********* CUSTOMER ĐỊA CHỈ THANH TOÁN TRANG CHECKOUT ***********/
+function action_woocommerce_order_details_after_customer_details( $order ) {
+	$xhtml = '';
+	$xhtml.= '<div class="details-order">
+				<div class="information-details">
+					<div class="title-color-checkout">Họ tên: <strong>'.$order->get_billing_first_name().'</strong></div>
+					<div class="title-color-checkout">Địa chỉ: <strong>'.$order->get_billing_address_1().'</strong></div>
+					<div class="title-color-checkout">Số điện thoại: <strong>'.$order->get_billing_phone().'</strong></div>
+					<div class="title-color-checkout">Email: <strong>'.$order->get_billing_email().'</strong></div>
+				</div>
+			 </div>';
+	echo $xhtml;
+}
+add_action( 'woocommerce_order_details_after_customer_details',array($this, 'action_woocommerce_order_details_after_customer_details'),10,1);
+
+/* CHẶN TÍNH NĂNG SO SÁNH GIÁ COCCOC */
+add_filter('woocommerce_structured_data_product_offer','devvn_woocommerce_structured_data_product_offer', 10, 2);
+function devvn_woocommerce_structured_data_product_offer($markup_offer, $product){
+    if ('' !== $product->get_price()) {
+        if ($product->is_type('variable')) {
+            if(isset($markup_offer['price'])){
+                $markup_offer['price'] = 0;
+            }
+            $markup_offer['priceSpecification']['price'] = 0;
+        } else {
+            $markup_offer['price'] = 0;
+            if(isset($markup_offer['priceSpecification']['price'])){
+                $markup_offer['priceSpecification']['price'] = 0;
+            }
+        }
+    }
+    return $markup_offer;
+}
+/* XÁC THỰC SỐ ĐIỆN THOẠI TẠI PAGE CHECK OUT */
+add_action('woocommerce_checkout_process', 'devvn_validate_phone_field_process' );
+function devvn_validate_phone_field_process() {
+    $billing_phone = filter_input(INPUT_POST, 'billing_phone');
+    if ( ! (preg_match('/^(0[35789]|09)[0-9]{8}$/', $billing_phone )) ){
+        wc_add_notice( "Xin nhập đúng <strong>số điện thoại</strong> của bạn"  ,'error' );
+    }
+}
+
+/* THÊM HÌNH ẢNH SẢN PHẨM VÀO FORM GỬI MAIL */
+add_filter( 'woocommerce_email_order_items_args', 'iconic_email_order_items_args', 10, 1 );
+function iconic_email_order_items_args( $args ) {
+    $args['show_image'] = true;
+    return $args;
+}
+/* LOẠI BỎ BÀI VIẾT KHI SEARCH */
+function search_by_title_only( $search, &$wp_query ) {
+    global $wpdb;
+    if ( empty( $search ) )
+        return $search; // skip processing – no search term in query
+    $q = $wp_query->query_vars;
+    $n = ! empty( $q['exact'] ) ? '' : '%';
+    $search =
+    $searchand = '';
+    foreach ( (array) $q['search_terms'] as $term ) {
+        $term = esc_sql( like_escape( $term ) );
+        $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+        $searchand = ' AND ';
+    }
+    if ( ! empty( $search ) ) {
+        $search = " AND ({$search}) ";
+        if ( ! is_user_logged_in() )
+            $search .= " AND ($wpdb->posts.post_password = '') ";
+    }
+    return $search;
+}
+add_filter( 'posts_search', 'search_by_title_only', 500, 2 );
+
+/** ẨN PHƯƠNG THỨC THANH TOÁN SEND EMAIL  **/
+add_filter( 'woocommerce_get_order_item_totals', 'custom_woocommerce_get_order_item_totals' );
+function custom_woocommerce_get_order_item_totals( $totals ) {
+    unset( $totals['payment_method'] );
+    return $totals;
+}

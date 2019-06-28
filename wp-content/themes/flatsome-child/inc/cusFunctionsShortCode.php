@@ -376,3 +376,41 @@ if(!function_exists('show_feedback_customer')){
 	}
 	add_shortcode('SHOW_FEEDBACK_CUSTOMER', 'show_feedback_customer');
 }
+
+/* CREATE SHORT CODE SHOW CATEGORY BLOG */
+if (!function_exists('create_short_code_show_category_blog')) {
+    function create_short_code_show_category_blog() {
+        $contentLength = get_field('vbk_length_content_news', 'option');
+        $xhtml = '';
+        $xhtml.= '<div id="mi-list-news">
+                    <div class="mi-news-boxs">';
+                    $cats = get_categories();
+                    foreach ($cats as $cat) {
+                        $cat_id= $cat->term_id;
+                        global $paged;
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        query_posts('category__in='.$cat_id.'&posts_per_page=10&paged='.$paged.'&orderby=date&order=DESC');
+                        if (have_posts()) :
+                            while (have_posts()) : the_post();
+        $xhtml.=                '<div class="mi-news-it">';
+                                        $permalink = get_the_permalink();
+                                        $title = get_the_title();
+        $xhtml.=                    '<a class="mi-news-images" href="'.$permalink.'">';
+        $xhtml.=                        get_the_post_thumbnail( get_the_id(), 'post-thumb', array("alt"=>get_the_title(), 'class' => 'media-object') );
+        $xhtml.=                    '</a>
+                                        <div class="mi-news-if">
+                                            <p class="mi-cate-name"><a class="mi-news-ct" href="'.get_category_link($cat_id).'" title="'.$cat->name.'">'.$cat->name.'</a></p>
+                                            <h3><a class="mi-news-tit" href="'.$permalink.'" title="'.$title.'">'.$title.'</a></h3>
+                                            <div class="mi-news-txt">'.content($contentLength).'</div>
+                                        </div>
+                                    </div>';
+                            endwhile;
+                        endif;
+                    }
+        $xhtml.=    '</div>
+                </div>';
+        return $xhtml;
+    }
+    add_shortcode( 'SHOW-CATEGORY', 'create_short_code_show_category_blog');
+}
+
