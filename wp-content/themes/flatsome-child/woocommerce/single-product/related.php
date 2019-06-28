@@ -40,11 +40,14 @@ $repater['row_spacing'] = 'small';
 if ( $related_products ) : ?>
 
   <div class="related related-products-wrapper product-section">
-
-    <h3 class="product-section-title container-width product-section-title-related pt-half pb-half uppercase">
-      <?php esc_html_e( 'Related products', 'woocommerce' ); ?>
-    </h3>
-
+    <div class="content-title-vaibekum" >
+      <div class="container section-head has-block tooltipstered">
+        <span class="group-icon">
+          <i class="fab fa-dashcube" aria-hidden="true"></i>
+        </span>
+        <h2 class="uppercase"><?php esc_html_e( 'Sản phẩm tương tự', 'woocommerce' ); ?></h2>
+        </div>
+    </div>
       <?php get_flatsome_repeater_start($repater); ?>
 
       <?php foreach ( $related_products as $related_product ) : ?>

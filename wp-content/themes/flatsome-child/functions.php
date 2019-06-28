@@ -2,13 +2,31 @@
 // Add custom Theme Functions here
 require 'inc/widget.php';
 require 'inc/cusFunctionsShortCode.php';
-require 'inc/register_block.php';
+require 'inc/reg_sidebar.php';
+
+/** UPDATE JQUERY VERSION */
+
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script( 'jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js", array(), NULL );
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
 function setup_script_theme()
 {
-    wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('app-js', get_stylesheet_directory_uri() . '/assets/js/main.js' , array(), NULL);
+    wp_enqueue_style('app-css',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), NULL);
+    wp_enqueue_style('owl-carousel-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', array(), NULL);
+    wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array(), NULL);
     wp_enqueue_style('awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css', array(), NULL);
+
 }
 add_action('wp_enqueue_scripts', 'setup_script_theme');
+
+
+
 
 function vaibekum_load_theme_scripts() {
 	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
@@ -22,20 +40,11 @@ function remove_price_product()
 add_action('init', 'remove_price_product');
 
 function pc_add_button_chat(){
-    echo '<a href="https://m.me/vaibekum.vn" class="btn button primary">Chat với người bán</a>';
+    $mg = get_field('vbk_messenger_chat', 'option');
+    echo '<a href="'.$mg.'" class="btn button primary">Chat với người bán</a>';
 }
 
 add_action('add_button_chat', 'pc_add_button_chat',11,1);
-
-// function edit_format_current_dong($price,$product){
-//     if(is_single()){
-//         $price = '<span class="product-price-single">'.number_format($product->price,0,'','.').'đ</span>';
-//     }else{
-//         $price = '<span class="product-price-catogory">'.number_format($product->price,0,'','.').'đ</span>';
-//     }
-//     return $price;
-// }
-// add_filter( 'woocommerce_get_price_html', 'edit_format_current_dong', 100, 2 );
 
 function remove_rating_single_product(){
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
@@ -78,8 +87,6 @@ function create_short_code_add_breadcrumbs(){
     }
 }
 add_shortcode('CUSTOMMER-YOAST-BREADCRUMB', 'create_short_code_add_breadcrumbs');
-// add_action('pc_after_header', 'add_breakcrumb');
-
 
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
     function wcs_woo_remove_reviews_tab($tabs) {
@@ -122,6 +129,10 @@ if(function_exists('acf_add_options_page')){
 		'redirect'	=> false,
     ));
 };
+if(function_exists('show_image_feedback')){
+    $num_image = get_field('vbk_number_feedback', 'option');
+    echo $num_image;
+}
 
 
 //custom display in stock
@@ -147,7 +158,7 @@ add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10,
 function change_existing_currency_symbol($currency_symbol, $currency) {
     switch ($currency) {
         case 'VND':
-            $currency_symbol = ' ₫';
+            $currency_symbol = ' đ';
             break;
     }
     return $currency_symbol;
@@ -278,6 +289,15 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
             break;
         case 'No products in the cart.' :
             $translated_text = __( 'Chưa có sản phẩm trong giỏ hàng.', 'woocommerce' );
+            break;
+        case 'Related products' :
+            $translated_text = __('Sản phẩm cùng loại', 'woocommerce');
+            break;
+        case 'No products were found matching your selection.' :
+            $translated_text = __('Không có sản phẩm nào trong danh mục này.', 'woocommerce');
+            break;
+        case 'Out of stock' :
+            $translated_text = __('Hết hàng', 'woocommerce');
             break;
     }
     return $translated_text;

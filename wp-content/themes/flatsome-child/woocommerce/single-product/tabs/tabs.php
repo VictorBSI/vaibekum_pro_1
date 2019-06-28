@@ -43,10 +43,12 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 $count_tabs  = 0;
 $count_panel = 0;
-
+?>
+<div class="row content-row mb-0">
+<?php
 if ( ! empty( $tabs ) ) : ?>
-
-	<div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
+	<div class="col large-9">
+	<div class="woocommerce-tabs wc-tabs-wrapper tabbed-content">
 		<ul class="tabs wc-tabs product-tabs small-nav-collapse <?php flatsome_product_tabs_classes(); ?>" role="tablist">
 			<?php foreach ( $tabs as $key => $tab ) : ?>
 				<li class="<?php echo esc_attr( $key ); ?>_tab <?php if ( $count_tabs == 0 ) echo 'active'; ?>" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
@@ -63,5 +65,12 @@ if ( ! empty( $tabs ) ) : ?>
 			<?php $count_panel++; endforeach; ?>
 		</div><!-- .tab-panels -->
 	</div><!-- .tabbed-content -->
-
+	</div>
 <?php endif; ?>
+<?php
+	
+	if(is_active_sidebar('sidebar-single-bellow')){
+		dynamic_sidebar('sidebar-single-bellow');
+	}
+?>
+</div>
