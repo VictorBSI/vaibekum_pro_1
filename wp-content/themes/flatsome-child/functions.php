@@ -15,10 +15,11 @@ add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 function setup_script_theme()
 {
-    wp_enqueue_style('app-js', get_stylesheet_directory_uri() . '/assets/js/main.js' , array('jquery'), NULL);
+    
     wp_enqueue_style('app-css',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
     wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), NULL);
     wp_enqueue_style('owl-carousel-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', array(), NULL);
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js' ,array ( 'jquery' ), wp_get_theme()->get('Version'));
     wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array(), NULL);
     wp_enqueue_style('awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css', array(), NULL);
 
@@ -26,10 +27,10 @@ function setup_script_theme()
 add_action('wp_enqueue_scripts', 'setup_script_theme');
 
 
-function vaibekum_load_theme_scripts() {
-	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
-}
-add_action( 'wp_enqueue_scripts', 'vaibekum_load_theme_scripts', 30 );
+// function vaibekum_load_theme_scripts() {
+// 	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
+// }
+// add_action( 'wp_enqueue_scripts', 'vaibekum_load_theme_scripts', 30 );
 
 function remove_price_product()
 {

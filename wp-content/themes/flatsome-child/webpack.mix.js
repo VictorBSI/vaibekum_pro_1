@@ -13,7 +13,7 @@ let mix = require('laravel-mix');
 
 mix
     .sass('source/app.scss', 'assets/css/')
-    .js(['js/main.js', 'js/vaibekum.js'], 'assets/js/main.js')
+    .js(['js/vaibekum.js'], 'assets/js/main.js')
     .sourceMaps(false, 'source-map')
     .disableNotifications();
 // Full API
