@@ -1,7 +1,7 @@
-@media (max-width: 575px) {
-	@import "./small/home";
+@media (max-width: 549px) {
+    @import "./small/home";
 }
 
-@media (max-width: 375px){
-	@import "./small/small_mophone_320";
+@media (max-width: 375px) {
+    @import "./small/small_mophone_320";
 }

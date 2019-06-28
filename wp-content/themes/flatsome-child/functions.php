@@ -3,12 +3,30 @@
 require 'inc/widget.php';
 require 'inc/cusFunctionsShortCode.php';
 require 'inc/reg_sidebar.php';
+
+/** UPDATE JQUERY VERSION */
+
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script( 'jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js", array(), NULL );
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
 function setup_script_theme()
 {
+    wp_enqueue_style('app', get_stylesheet_directory_uri() . '/assets/js/main.js' , array(), NULL);
     wp_enqueue_style('app',  get_stylesheet_directory_uri() . '/assets/css/app.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), NULL);
+    wp_enqueue_style('owl-carousel-default', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css', array(), NULL);
+    wp_enqueue_script('owl-carousel-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array(), NULL);
     wp_enqueue_style('awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css', array(), NULL);
+
 }
 add_action('wp_enqueue_scripts', 'setup_script_theme');
+
+
+
 
 function vaibekum_load_theme_scripts() {
 	wp_enqueue_script('vaibekum.js',get_stylesheet_directory_uri().'/js/vaibekum.js' , array(), wp_get_theme()->get('Version'));
@@ -115,6 +133,7 @@ if(function_exists('show_image_feedback')){
     $num_image = get_field('vbk_number_feedback', 'option');
     echo $num_image;
 }
+
 
 //custom display in stock
 function woocommerce_get_custom_availability( $data, $product ) {

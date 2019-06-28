@@ -313,3 +313,66 @@ if(!function_exists('create_shortcode_post_single_blog')) {
     }
     add_shortcode('POST-LIEN-QUAN', 'create_shortcode_post_single_blog');
 }
+
+/** CREATE SHORTCODE DISPLAY FEEDBACK CUSTOMER */
+
+if(!function_exists('show_feedback_customer')){
+	function show_feedback_customer(){
+		class Image
+		{
+			public $url;
+			public $title;
+		}
+
+		$array_ImageOfFeedback = array();
+		for( $i = 1; $i<=5; $i++ ) {
+			$arrayItem = new Image();
+			$arrayItem->url = get_field('vbk_number_'.$i.'_feedback', 'option');
+			$arrayItem->title = get_field('comment_'.$i, 'option');
+			$array_ImageOfFeedback[] = $arrayItem;
+		}
+		
+		$array_imgage_new = array_filter($array_ImageOfFeedback, function($value) { return $value->url !== false; });
+
+		if(!empty($array_imgage_new)){
+			$smg = get_field('vbk_messenger_chat', 'option');
+			$html = '<div class="row">';
+			$html .= '<div class="owl-carousel">';
+			foreach($array_imgage_new as $key => $value){
+				
+				$html .= '<div class="item">
+				<div class="product-small col has-hover product type-product post-570 status-publish has-post-thumbnail shipping-taxable purchasable product-type-simple is-selected"">
+					<div class="col-inner">
+						<div class="product-small box ">
+							<div class="box-image">
+								<div class="image-fade_in_back">
+									<a>
+										<img width="247" height="296" src="'.$value->url.'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""> </a>
+								</div>
+								
+							</div>
+							<!-- box-image -->
+
+							<div class="box-text box-text-products text-center grid-style-2">
+								<div class="title-wrapper">
+									<p class="name product-title"><a>'.$value->title.'</a></p>
+								</div>
+								
+								<div class="chat_btn"><a href="'.$smg.'" class="btn button primary">Chat với người bán</a></div>
+								
+							</div>
+							<!-- box-text -->
+						</div>
+						<!-- box -->
+					</div>
+					<!-- .col-inner -->
+				</div>
+				
+				</div>';
+			}
+			$html .= '</div></div>';
+		}
+		return $html;
+	}
+	add_shortcode('SHOW_FEEDBACK_CUSTOMER', 'show_feedback_customer');
+}

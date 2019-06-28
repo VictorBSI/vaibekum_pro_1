@@ -731,3 +731,30 @@ body.home #mega_menu {
         margin-top: unset!important;
     }
 }
+
+
+/* MENU CONTACT MOBILE */
+
+#header-contact {
+    >li {
+        span {
+            color: $main_color;
+            text-transform: lowercase;
+        }
+    }
+}
+
+
+/* FEEDBACK CUSTOMER */
+
+.owl-prev.flickity-button.flickity-prev-next-button.previous,
+.owl-next.flickity-button.flickity-prev-next-button.next {
+    opacity: 1;
+    height: 30px;
+    width: 30px;
+    &:hover {
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        color: $main_color;
+        background-color: #fff;
+    }
+}
