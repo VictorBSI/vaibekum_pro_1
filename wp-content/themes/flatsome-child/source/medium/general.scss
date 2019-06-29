@@ -200,6 +200,15 @@ span.widget-title.shop-sidebar {
         font-weight: 700;
         color: black;
     }
+    p.stock {
+        font-size: 16px!important;
+    }
+}
+
+.product_meta {
+    span {
+        font-size: 15px;
+    }
 }
 
 // block link content product
@@ -936,7 +945,7 @@ a.added_to_cart:after {
 /* BREADCRUMBS */
 
 .flex-center {
-    margin: 0px;
+    margin: 0px!important;
 }
 
 
@@ -1048,7 +1057,7 @@ a.added_to_cart:after {
 
 .price-wrapper span.amount,
 span.amount {
-    color: #f30000;
+    color: #f30000!important;
 }
 
 
