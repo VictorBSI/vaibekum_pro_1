@@ -1589,3 +1589,9 @@ span.amount {
 }
 
 //ipad
+@media (max-width:766px) and (min-width:549px) {
+    .selling-products .large-9 {
+        max-width: 100%!important;
+        flex-basis: 100%!important;
+    }
+}
