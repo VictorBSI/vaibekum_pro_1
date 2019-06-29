@@ -298,6 +298,7 @@ function flatsome_mayphotocomvn_text_strings( $translated_text, $text, $domain )
         case 'Out of stock' :
             $translated_text = __('Hết hàng', 'woocommerce');
             break;
+        
     }
     return $translated_text;
 }
@@ -316,6 +317,7 @@ function ra_change_translate_text_multiple( $translated ) {
         'Thuế VAT:' => 'thuế VAT :',
         'Lưu ý:' => 'Lưu ý :',
         'Note:' => 'Lưu ý :',
+        'Tạm tính:' => 'Tổng cộng',
     );
     $translated = str_ireplace( array_keys($text), $text, $translated );
     return $translated;

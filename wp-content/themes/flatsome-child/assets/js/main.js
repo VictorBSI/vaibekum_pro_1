@@ -128,7 +128,7 @@ jQuery(document).ready(function ($) {
   $('button.owl-next').addClass('flickity-button flickity-prev-next-button next');
   $('.menu li.menu-item-has-children>a').append('<i class="fas fa-angle-right"></i>');
 
-  if ($(window).width() <= 849) {
+  if ($(window).width() <= 992) {
     $('.menu li').click(function (e) {
       if ($(this).hasClass('has-child')) {
         e.preventDefault();

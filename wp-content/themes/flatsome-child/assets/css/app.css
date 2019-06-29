@@ -555,7 +555,7 @@ body.home #mega_menu {
 
 #mega_menu > li > a {
   position: relative;
-  padding-left: 40px;
+  padding-left: 15px;
 }
 
 #mega_menu > li > a > img {
@@ -1421,8 +1421,8 @@ span.amount {
 /* HẾT HÀNG */
 
 .box-image .out-of-stock-label {
-  color: #E10000;
-  padding: 0px;
+  color: #E10000 !important;
+  padding: 0px !important;
 }
 
 /* CART & CHECKOUT */
@@ -1595,6 +1595,35 @@ span.amount {
 
   .woocommerce-checkout .large-7 {
     padding-bottom: 0px;
+  }
+}
+
+.vbk-support #contact-infomation-store-load .add-item {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.vbk-support #contact-infomation-store-load .add-item i {
+  border: none;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+@media (max-width: 992px) and (min-width: 767px) {
+  .selling-products .large-9 {
+    max-width: 100% !important;
+    -webkit-flex-basis: 100% !important;
+            flex-basis: 100% !important;
+  }
+
+  #mega_menu {
+    display: block !important;
+  }
+
+  #mega_menu > li > ul.sub-menu {
+    position: unset !important;
+    top: unset !important;
+    left: 0 !important;
   }
 }
 
