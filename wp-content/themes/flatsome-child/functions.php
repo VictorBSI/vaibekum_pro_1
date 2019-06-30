@@ -55,11 +55,18 @@ function gift_product(){
     if(have_rows($content_gift)){
         echo '<div class="note-promo">';
         while(have_rows($content_gift)): the_row();
-            echo sprintf('<a href="%s" target="%s">%s </a>',
-                get_sub_field('link')['url'],
-                get_sub_field('link')['target'],
-                get_sub_field('link')['title']
-            );
+            $url = get_sub_field('link')['url'];
+            $target = get_sub_field('link')['target'];
+            $title = get_sub_field('link')['title'];
+            echo '<p class="link_shop"><a href="'.$url.'" target="'.$target.'">';
+            if(!empty($title)){
+               echo $title;
+            }else{
+                echo $url;
+            }
+
+            echo  '</a></p>';
+            
         endwhile;
         echo '</div>';
     }

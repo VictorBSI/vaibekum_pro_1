@@ -40,6 +40,7 @@
 <header id="header" class="header <?php flatsome_header_classes();  ?>">
    <div class="header-wrapper">
 	<?php
+		$facebook_link = get_field('vbk_link_facebook', 'option');
 		get_template_part('template-parts/header/header', 'wrapper');
 	?>
    </div><!-- header-wrapper-->

@@ -1635,6 +1635,10 @@ span.amount {
   }
 }
 
+.link_shop {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 849px) {
   .container {
     width: 100% !important;
