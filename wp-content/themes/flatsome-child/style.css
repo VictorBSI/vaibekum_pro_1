@@ -41,3 +41,11 @@ Version: 3.0
     background-position: left;
     padding-left: 5px;
 }
+
+/* CHI TIET SAN PHAM MO TA NGAN */
+.product-short-description ul {
+  list-style: none;
+}
+.product-short-description ul li {
+  margin-left: 0px;
+}
