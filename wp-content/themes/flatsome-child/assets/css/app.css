@@ -1460,7 +1460,7 @@ span.amount {
 }
 
 .product-short-description ul li {
-  margin-left: 0px;
+  margin-left: 0px !important;
 }
 
 .product-info p.stock {
